@@ -38,7 +38,7 @@ class Portofoliu extends Component {
             this.setState(
                 {
                     ...this.state,
-                    album: [image.original].concat(this.state.album),
+                    album: [image].concat(this.state.album),
                 }
             )
         })
