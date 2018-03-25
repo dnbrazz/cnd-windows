@@ -1,0 +1,101 @@
+@import '~antd/dist/antd.css';
+@import '~react-image-gallery/styles/css/image-gallery.css';
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.logo {
+  width: 150px;
+  height: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+@media (max-width: 767px) {
+  .logo {
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 50px;
+  }
+}
+.headLogo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/logo%2Flogo%402x2.png?alt=media&token=357e7e73-d2b5-4478-ba36-e7ecdf28e0ab");
+  background-size: inherit;
+  background-size: cover;
+}
+.navbar {
+    border-radius: 0px;
+}
+.nav {
+  min-height: 50px;
+}
+
+.headroom {
+  top: 0;
+  left: 0;
+  right: 0;
+  zIndex: 1;
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+}
+.ant-carousel .slick-slide {
+  padding: 5px;
+  max-height: inherit;
+  line-height: inherit;
+  background: #fff;
+}
+.ant-row {
+  padding: 5px;
+}
+
+.imagineCarousel {
+  height: inherit;
+  width: inherit;
+  background-size: contain;
+}
+#root, .row{
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #333;
+}
+
+.anticon-facebook:hover {
+  color: #3b5998;
+  cursor: pointer;
+}
+.anticon-instagram:hover {
+  color: #fbad50;
+  cursor: pointer;
+}
+.anticon-youtube:hover {
+  color: #ff0000;
+  cursor: pointer;
+}
