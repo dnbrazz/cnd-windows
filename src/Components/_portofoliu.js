@@ -16,32 +16,28 @@ var config = {
 };
 
 class Portofoliu extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super()
         this.state = {
-            album: [],
-            stareaActuala: "album"
-        };
+            album: []
+        }
+        if (!firebase.apps.length) {
+            firebase.initializeApp(config)
+        }
     }
 
     componentWillReceiveProps() {
+
+    }
+    componentDidMount() {
+        this.firebaseRef = firebase.database().ref('/Portofoliu/')
+        this.firebaseCallback = this.firebaseRef.on('value', (snap) => {
+            this.setState({...this.state, album: snap.val().concat(this.state.album) })
+        })
     }
 
-    componentDidMount() {
-        firebase.initializeApp(config);
-        let albumRef = firebase.database().ref("Portofoliu").orderByKey();
-        albumRef.on("child_added", snapshot => {
-            let image = {
-                original: snapshot.val(),
-                thumbnail: snapshot.val(),
-            }
-            this.setState(
-                {
-                    ...this.state,
-                    album: [image].concat(this.state.album),
-                }
-            )
-        })
+    componentWillUnmount() {
+        this.firebaseRef.off('value', this.firebaseCallback);
     }
 
     componentDidUpdate() {
@@ -52,7 +48,7 @@ class Portofoliu extends Component {
         return (
             <Row>
                 <Col style={{ paddingTop: '50px' }}>
-                    <ImageGallery items={this.state.album} />
+                    <ImageGallery items={this.state.album} style={{ minHeight: '500px' }}/>
                 </Col>
             </Row>
         )

@@ -3,7 +3,6 @@ import { Col, Carousel, Divider } from 'antd'
 import Flexbox from 'flexbox-react'
 
 class Acasa extends Component {
-
     componentWillReceiveProps() {
     }
 
