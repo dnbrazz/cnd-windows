@@ -29,10 +29,19 @@ class Portofoliu extends Component {
     componentWillReceiveProps() {
 
     }
+
     componentDidMount() {
-        this.firebaseRef = firebase.database().ref('/Portofoliu/')
-        this.firebaseCallback = this.firebaseRef.on('value', (snap) => {
-            this.setState({...this.state, album: snap.val().concat(this.state.album) })
+        this.firebaseRef = firebase.database().ref("Portofoliu").orderByPriority()
+        this.firebaseCallback = this.firebaseRef.on("child_added", snapshot => {
+            let product = {
+                item: snapshot.val(),
+            }
+            this.setState(
+                {
+                    ...this.state,
+                    album: [product.item].concat(this.state.album)
+                }
+            )
         })
     }
 
@@ -40,15 +49,11 @@ class Portofoliu extends Component {
         this.firebaseRef.off('value', this.firebaseCallback);
     }
 
-    componentDidUpdate() {
-        console.log(this.state.album)
-    }
-
     render() {
         return (
-            <Row>
-                <Col style={{ paddingTop: '50px' }}>
-                    <ImageGallery items={this.state.album} style={{ minHeight: '500px' }}/>
+            <Row style={{ backgroundColor: '#222' }}>
+                <Col style={{ backgroundColor: '#222' }}>
+                    <ImageGallery items={this.state.album} />
                 </Col>
             </Row>
         )

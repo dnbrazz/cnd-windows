@@ -32,7 +32,7 @@ class Head extends Component {
     renderSwitch() {
         switch (this.props.info) {
             case "Acasa":
-                return <Acasa/>
+                return <Acasa handleClick={this.props.handleClick}/>
             case "About":
                 return <About/>
             case "Portofoliu":
