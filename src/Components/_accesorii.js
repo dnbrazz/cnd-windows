@@ -7,69 +7,73 @@ import Praguri from './categorii/_praguri'
 import SwipeableViews from 'react-swipeable-views'
 
 const style2 = {
-    borderBottom: '1px solid #000',
-    backgroundColor: '#222',
-    padding: '0',
+  borderBottom: '1px solid #000',
+  backgroundColor: '#222',
+  padding: '0'
 }
 
-const stil = {
-    color: '#fff',
-    fontSize: '14px',
-    textTransform: 'none',
-    letterSpacing: '1px',
-}
 const style = {
-    backgroundColor: '#222'
+  backgroundColor: '#222'
 }
 
 class Accesorii extends Component {
-    constructor() {
-        super();
-        this.state = {
-          slideIndex: 0,
-        };
-        this.onClick = this.handleChange.bind(this);
+  constructor () {
+    super()
+    this.state = {
+      slideIndex: 0,
+      screenWidth: 12
     }
+    this.onClick = this.handleChange.bind(this)
+  }
 
     handleChange = (value) => {
-        this.setState({
-          slideIndex: value,
-        })
+      this.setState({
+        slideIndex: value
+      })
     }
 
-    componentWillReceiveProps() {
-
-    }
-
-    componentDidMount() {
+    componentWillReceiveProps () {
 
     }
 
-    componentDidUpdate() {
+    componentDidMount () {
+      let width = window.innerWidth
+      if (width <= 992) {
+        this.setState({screenWidth: 12})
+      } else {
+        this.setState({screenWidth: 15})
+      }
+    }
+
+    componentDidUpdate () {
 
     }
-    render() {
-        return (
-            <div style={style}>
-                <Row type='flex' style={style}>
-                    <Col style={style2} sm={12} md={12} lg={12} >
-                        <Tabs onChange={this.handleChange} value={this.state.slideIndex} tabItemContainerStyle={style} inkBarStyle={{ backgroundColor: '#ffc81c' }}>
-                            <Tab label="Plase insecte" value={0} style={stil} />
-                            <Tab label="Glafuri" value={1} style={stil} />
-                            <Tab label="Praguri" value={2} style={stil} />
-                        </Tabs>
-                    </Col>
-                </Row>
-                <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={style}>
-                    <Plase />
-                    <Glafuri />
-                    <Praguri />
-                </SwipeableViews>
-            </div>
-        )
+    render () {
+      const stil = {
+        color: '#fff',
+        fontSize: this.state.screenWidth,
+        textTransform: 'none',
+        letterSpacing: '1px'
+      }
+      return (
+        <div style={style}>
+          <Row type='flex' style={style}>
+            <Col style={style2} sm={12} md={12} lg={12} >
+              <Tabs onChange={this.handleChange} value={this.state.slideIndex} tabItemContainerStyle={style} inkBarStyle={{ backgroundColor: '#ffc81c' }}>
+                <Tab label='Plase insecte' value={0} style={stil} />
+                <Tab label='Glafuri' value={1} style={stil} />
+                <Tab label='Praguri' value={2} style={stil} />
+              </Tabs>
+            </Col>
+          </Row>
+          <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={style}>
+            <Plase />
+            <Glafuri />
+            <Praguri />
+          </SwipeableViews>
+        </div>
+      )
     }
 }
 
 export default Accesorii
-
-

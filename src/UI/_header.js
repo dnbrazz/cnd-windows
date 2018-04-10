@@ -9,12 +9,6 @@ import CommunicationEmail from 'material-ui/svg-icons/communication/email'
 import Camera from 'material-ui/svg-icons/image/photo-camera'
 import Home from 'material-ui/svg-icons/action/home'
 
-const stil = {
-  color: '#fff',
-  fontSize: '15px',
-  textTransform: 'none',
-  letterSpacing: '2px'
-}
 const stildual = {
   color: '#222',
   fontSize: '16px',
@@ -35,7 +29,30 @@ const style2 = {
 }
 
 class Head extends Component {
+  constructor () {
+    super()
+    this.state = {
+      screenWidth: 12
+    }
+  }
+
+  componentDidMount () {
+    let width = window.innerWidth
+    if (width <= 992) {
+      this.setState({screenWidth: 12})
+    } else {
+      this.setState({screenWidth: 15})
+    }
+  }
+
   render () {
+    const stil = {
+      color: '#fff',
+      fontSize: this.state.screenWidth,
+      textTransform: 'none',
+      letterSpacing: '1px'
+    }
+
     return (
       <div>
         <Row style={style} type='flex'>
@@ -64,19 +81,19 @@ class Head extends Component {
           </Col>
         </Row>
         <Row type='flex' style={style}>
-          <Col style={style2} xs={12} sm={3} md={3} lg={3} >
+          <Col style={style2} xs={12} sm={12} md={3} lg={3} >
             <Tabs onChange={this.props.handleChange} value={this.props.slideIndex} tabItemContainerStyle={{ backgroundColor: '#ffc81c' }} inkBarStyle={{ backgroundColor: '#222' }} contentContainerStyle={{ color: '#777' }}>
               <Tab value={0} style={stildual} icon={<Home style={{ height: '15px', paddingTop: '5px' }} />} />
               <Tab value={1} style={stildual} icon={<Camera style={{ height: '15px', paddingTop: '5px' }} />} />
               <Tab value={9} style={stildual} icon={<CommunicationCall style={{ height: '15px', paddingTop: '5px' }} />} />
             </Tabs>
           </Col>
-          <Col style={style2} xs={12} sm={9} md={9} lg={9} >
+          <Col style={style2} xs={12} sm={12} md={9} lg={9} >
             <Tabs onChange={this.props.handleChange} value={this.props.slideIndex} tabItemContainerStyle={{ backgroundColor: '#222' }} inkBarStyle={{ backgroundColor: '#ffc81c' }} contentContainerStyle={{ color: '#777' }}>
-              <Tab label='Tamplarie PVC' value={2} style={stil} />
-              <Tab label='Accesorii' value={3} style={stil} />
-              <Tab label='Compartimentari' value={4} style={stil} />
-              <Tab label='Pereti Cortina' value={5} style={stil} />
+              <Tab className='menu_label' label='Tamplarie PVC' value={2} style={stil} />
+              <Tab className='menu_label' label='Accesorii' value={3} style={stil} />
+              <Tab className='menu_label' label='Compartimentari' value={4} style={stil} />
+              <Tab className='menu_label' label='Pereti Cortina' value={5} style={stil} />
             </Tabs>
           </Col>
         </Row>
