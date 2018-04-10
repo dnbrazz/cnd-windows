@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class About extends Component {
+class Glafuri extends Component {
   componentWillReceiveProps () {
 
   }
@@ -15,12 +15,12 @@ class About extends Component {
   render () {
     return (
       <div>
-        <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
-                    About
+        <div style={{ background: '#222', padding: 24, minHeight: 380 }}>
+                Glafuri
         </div>
       </div>
     )
   }
 }
 
-export default About
+export default Glafuri

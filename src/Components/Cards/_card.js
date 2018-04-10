@@ -2,26 +2,25 @@ import React, { Component } from 'react'
 import { Card } from 'antd'
 
 const gridStyle = {
-    width: '100%',
-    textAlign: 'center',
-};
+  width: '100%',
+  textAlign: 'center'
+}
 
 class Cardobj extends Component {
-    componentWillReceiveProps() {
-    }
+  componentWillReceiveProps () {
+  }
 
-    componentDidMount() {
-    }
+  componentDidMount () {
+  }
 
-    componentDidUpdate() {
-    }
+  componentDidUpdate () {
+  }
 
-    render() {
-        return (
-            <Card style={gridStyle}>
-            </Card>
-        )
-    }
+  render () {
+    return (
+      <Card style={gridStyle} />
+    )
+  }
 }
 
 export default Cardobj

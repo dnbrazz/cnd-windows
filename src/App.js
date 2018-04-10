@@ -1,121 +1,276 @@
 import React, { Component } from 'react'
-import { Col, Row } from 'react-bootstrap'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
-import { Tabs, Tab } from 'material-ui/Tabs'
-import ActionAlarm from 'material-ui/svg-icons/action/alarm'
-import ActionToday from 'material-ui/svg-icons/action/today'
-import CommunicationCall from 'material-ui/svg-icons/communication/call'
-import CommunicationEmail from 'material-ui/svg-icons/communication/email'
 import SwipeableViews from 'react-swipeable-views'
 import Paper from 'material-ui/Paper'
-import { Layout } from 'antd'
-import Headroom from 'react-headroom'
+import { Layout, Row, Col as ColAntd } from 'antd'
+import Head from './UI/_header.js'
 import Foot from './UI/_footer.js'
-import { BrowserRouter as Router } from 'react-router-dom'
 import Acasa from './Components/_acasa.js'
 import Portofoliu from './Components/_portofoliu.js'
 import Tamplarie from './Components/_tamplarie.js'
-import Usi from './Components/_usi.js'
+import Compartimentari from './Components/_usi.js'
 import Cortine from './Components/_cortine.js'
 import Accesorii from './Components/_accesorii.js'
-import Contact from './Components/_contact.js'
+import Dialog from 'material-ui/Dialog'
+import IconCall from 'material-ui/svg-icons/communication/call'
+import IconChat from 'material-ui/svg-icons/communication/chat'
+import IconMail from 'material-ui/svg-icons/communication/mail-outline'
+import TextField from 'material-ui/TextField'
+import FlatButton from 'material-ui/FlatButton'
+import firebase from 'firebase'
+import Snackbar from 'material-ui/Snackbar'
+import { BrowserRouter as Router } from 'react-router-dom'
 import './App.css'
 
-const styles = {
-  color: '#fff',
-  fontSize: '12px',
+var style = {
+  backgroundColor: '#222'
 }
 
-const style = {
-  borderBottom: '1px solid #000',
-  borderTop: '1px solid #000',
+var iconStyle = {
+  height: '40px',
+  width: '100%',
+  cursor: 'pointer'
+}
+
+var dialogStyle = {
+  fontWeight: 'bold',
+  color: '#fff',
+  fontSize: '16px'
+}
+
+var contactStyle = {
+  textAlign: 'center',
+  color: '#fff',
+  fontSize: '24px',
+  fontWeight: 'bold',
+  letterSpacing: '2px'
+}
+
+var toastStyle = {
+  backgroundColor: '#222',
+  color: '#ffc81c',
+  fontWeight: 'bold',
+  fontSize: '15px',
+  padding: '0px'
+}
+
+var darkStyle = {
   backgroundColor: '#222'
 }
-const style2 = {
-  borderBottom: '1px solid #000',
-  borderTop: '2px solid #ffc81c',
-  backgroundColor: '#222'
+
+var yellowColor = {
+  color: '#ffc81c'
+}
+
+var yellowUnder = {
+  borderBottomColor: '#ffc81c'
+}
+
+var blackBorder = {
+  borderColor: '#fff'
+}
+
+var btnStyle = {
+  color: '#333',
+  textTransform: 'none',
+  fontSize: '20px',
+  fontWeight: 'bold'
+}
+
+var centerText = {
+  textAlign: 'center'
+}
+var config = {
+  apiKey: 'AIzaSyDkcFTtM0icH686vP2ZMu1LDYnUKCRrop4',
+  authDomain: 'cndwindows-ro.firebaseapp.com',
+  databaseURL: 'https://cndwindows-ro.firebaseio.com',
+  projectId: 'cndwindows-ro',
+  storageBucket: 'cndwindows-ro.appspot.com',
+  messagingSenderId: '894816752251'
 }
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor () {
+    super()
     this.state = {
       slideIndex: 0,
       open: false,
-    };
-    this.onClick = this.handleChange.bind(this);
+      msg: false,
+      toast: false,
+      logged: false,
+      toastmsg: '',
+      nume: null,
+      email: null,
+      telefon: null,
+      mesaj: null,
+      animate: false
+    }
+    this.onClick = this.handleChange.bind(this)
   }
 
-  handleChange = (value) => {
-    this.setState({
-      slideIndex: value,
+  componentWillMount () {
+    if (!firebase.apps.length) {
+      firebase.initializeApp(config)
+    }
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ ...this, logged: true })
+      } else {
+        this.setState({ ...this, logged: false })
+      }
     })
   }
 
-  handleToggle = () => this.setState({ open: !this.state.open })
+  handleOpen = () => {
+    this.setState({ open: true })
+  }
 
-  handleClose = () => this.setState({ open: false })
+  handleClose = () => {
+    this.setState({ open: false })
+  }
 
-  render() {
+  handleOpenMsg = () => {
+    this.setState({ msg: true })
+  }
+
+  handleCloseMsg = () => {
+    this.setState({ msg: false })
+  }
+
+  handleCloseToast = () => {
+    this.setState({ toast: false })
+  }
+  handleSubmit = () => {
+    let dbCon = firebase.database().ref('/Mesaje')
+    if (this.state.nume && this.state.email && this.state.telefon && this.state.mesaj) {
+      dbCon.push({
+        nume: this.state.nume,
+        email: this.state.email,
+        telefon: this.state.telefon,
+        mesaj: this.state.mesaj
+      })
+      this.setState({
+        nume: null,
+        email: null,
+        telefon: null,
+        mesaj: null,
+        msg: false,
+        toastmsg: 'Mesajul a fost Trimis!',
+        toast: true
+      })
+    } else {
+      this.setState({
+        toastmsg: 'Va rugam sa completati toate campurile !',
+        toast: true
+      })
+    }
+  }
+
+  handleChange = (value) => {
+    if (value === 9) {
+      this.setState({
+        open: true
+      })
+      return
+    }
+    this.setState({
+      slideIndex: value
+    })
+  }
+
+  select = (key) => {
+    switch (key) {
+      // Call
+      case 0: {
+        return this.setState({ open: false })
+      }
+      // Email
+      case 1: {
+        return this.setState({ open: false })
+      }
+      // Msg
+      case 2: {
+        return this.setState({ open: false, msg: true })
+      }
+      default: {
+
+      }
+    }
+  }
+
+  render () {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-      <Router>
-        <Paper zDepth={5} rounded={false} style={{ backgroundColor: '#222' }}>
-          <Layout>
-            <Headroom disable>
-              <Row style={style} type='flex'>
-                <Col xs={6} sm={4} md={4} style={{ padding: 25, paddingLeft: 45 }}>
-                  <div className='logo'></div>
-                </Col>
-                <Col xs={6} sm={4} md={4} style={{ padding: 15 }}>
-                  <Paper zDepth={1} rounded={false} style={{ backgroundColor: '#222', padding: '10px' }}>
-                    <Row style={{ fontSize: '15px', backgroundColor: '#222'}}>
-                      <CommunicationCall style={{ height: '20px', paddingTop: '5px'}}/> 0722.222.222
-                    </Row>
-                    <Row style={{ fontSize: '15px', backgroundColor: '#222'}}>
-                      <CommunicationEmail style={{ height: '20px', paddingTop: '5px'}}/> info@cndwindows.ro
-                    </Row>
-                  </Paper>
-                </Col>
-                <Col xsHidden sm={4} md={4} style={{ padding: 15 }}>
-                  <Paper zDepth={1} rounded={false} style={{ backgroundColor: '#222', padding: '10px' }}>
-                    <Row style={{ fontSize: '15px', backgroundColor: '#222'}}>
-                      <ActionAlarm style={{ height: '20px', paddingTop: '5px'}}/> Program
-                    </Row>
-                    <Row style={{ fontSize: '15px', backgroundColor: '#222'}}>
-                      <ActionToday style={{ height: '20px', paddingTop: '5px'}}/> L - V : 07:00 - 16:00
-                    </Row>
-                  </Paper>
-                </Col>
+        <Router>
+          <Paper zDepth={5} rounded={false} style={style}>
+            <Layout>
+              <Head handleChange={this.handleChange} slideIndex={this.state.slideIndex} />
+              <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={darkStyle} animateHeight={this.state.animate}>
+                <Acasa loaded={() => { this.setState({animate: true}) }} />
+                <Portofoliu config={config} />
+                <Tamplarie />
+                <Accesorii />
+                <Compartimentari />
+                <Cortine />
+              </SwipeableViews>
+            </Layout>
+            <FlatButton onClick={() => this.handleOpen()} fullWidth label='Contacteaza-ne!' style={{ backgroundColor: yellowColor.color }} labelStyle={btnStyle} />
+            <Foot />
+            <Dialog modal={false} open={this.state.open} onRequestClose={this.handleClose} >
+              <Row gutter={8} type='flex' justify='space-around'>
+                <ColAntd span={8} style={centerText} onClick={() => this.select(0)}>
+                  <a href='tel:0722-222-222'>
+                    <IconCall style={iconStyle} hoverColor={yellowColor.color} /></a><br />
+                  <div style={dialogStyle}>Contacteaza Telefonic</div>
+                </ColAntd>
+                <ColAntd span={8} style={centerText} onClick={() => this.select(1)}>
+                  <a href='mailto:info@cndwindows.ro'>
+                    <IconMail style={iconStyle} hoverColor={yellowColor.color} /></a><br />
+                  <div style={dialogStyle}>Trimite un Mail</div>
+                </ColAntd>
+                <ColAntd span={8} style={centerText} onClick={() => this.select(2)}>
+                  <IconChat style={iconStyle} hoverColor={yellowColor.color} /><br />
+                  <div style={dialogStyle}>Lasa un Mesaj</div>
+                </ColAntd>
               </Row>
-              <Row type='flex'>
-                <Col style={style2}>
-                  <Tabs onChange={this.handleChange} value={this.state.slideIndex} tabItemContainerStyle={{ backgroundColor: '#222' }} inkBarStyle={{ backgroundColor: '#ffc81c' }} contentContainerStyle={{ color: '#777' }}>
-                    <Tab label="Acasa" value={0} style={styles} />
-                    <Tab label="Portofoliu" value={1} style={styles} />
-                    <Tab label="Tamplarie" value={2} style={styles} />
-                    <Tab label="Compartimentari" value={3} style={styles} />
-                    <Tab label="Pereti Cortina" value={4} style={styles} />
-                    <Tab label="Accesorii" value={5} style={styles} />
-                  </Tabs>
-                </Col>
+            </Dialog>
+            <Dialog modal={false} open={this.state.msg} onRequestClose={this.handleCloseMsg}>
+              <Row>
+                <ColAntd>
+                  <Row>
+                    <div style={contactStyle}> Intra in Contact!</div>
+                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, color: '#fff' }} floatingLabelText='Nume' onChange={(nume) => {
+                      this.setState({ ...this, nume: nume.target.value })
+                    }} />
+                    <br />
+                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10 }} floatingLabelText='Email' onChange={(email) => {
+                      this.setState({ ...this, email: email.target.value })
+                    }} />
+                    <br />
+                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10 }} floatingLabelText='Telefon' onChange={(telefon) => {
+                      this.setState({ ...this, telefon: telefon.target.value })
+                    }} />
+                    <br />
+                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10 }} floatingLabelText='Mesaj' multiLine rows={4} rowsMax={10} onChange={(mesaj) => {
+                      this.setState({ ...this, mesaj: mesaj.target.value })
+                    }} />
+                    <br /><br />
+                    <FlatButton onClick={() => this.handleSubmit()} fullWidth label='Trimite Mesaj' style={{ backgroundColor: '#ffc81c' }} labelStyle={{ color: '#fff', textTransform: 'none', fontSize: '20px', fontWeight: 'bold' }} />
+                  </Row>
+                </ColAntd>
               </Row>
-            </Headroom>
-            <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={{backgroundColor: '#222'}}>
-              <Acasa handleClick={this.handleChange.bind(this)} />
-              <Portofoliu />
-              <Tamplarie />
-              <Usi/>
-              <Cortine/>
-              <Accesorii />
-              <Contact />
-            </SwipeableViews>
-          </Layout>
-          <Foot />
-        </Paper>
+            </Dialog>
+            <Snackbar
+              contentStyle={toastStyle}
+              bodyStyle={darkStyle}
+              open={this.state.toast}
+              message={this.state.toastmsg}
+              autoHideDuration={4000}
+              onRequestClose={this.handleCloseToast} />
+          </Paper>
         </Router>
       </MuiThemeProvider>
     )

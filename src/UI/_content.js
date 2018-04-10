@@ -11,55 +11,54 @@ import Contact from '../Components/_contact.js'
 const { Content } = Layout
 
 class Head extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      paginaAfisata: this.props.info
+    }
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            paginaAfisata: this.props.info
-        };
-    }
-    
-    componentWillReceiveProps() {
-    }
+  componentWillReceiveProps () {
+  }
 
-    componentDidMount() {
-        this.setState({...this.state, paginaAfisata: this.props.info})
-    }
+  componentDidMount () {
+    this.setState({...this.state, paginaAfisata: this.props.info})
+  }
 
-    componentDidUpdate() {
-    }
+  componentDidUpdate () {
+  }
 
-    renderSwitch() {
-        switch (this.props.info) {
-            case "Acasa":
-                return <Acasa handleClick={this.props.handleClick}/>
-            case "About":
-                return <About/>
-            case "Portofoliu":
-                return <Portofoliu/>
-            case "Tamplarie":
-                return <Tamplarie/>
-            case "Usi":
-                return <Usi/>
-            case "Cortine":
-                return <Cortine/>
-            case "Accesorii":
-                return <Accesorii/>
-            case "Contact":
-                return <Contact/>
-            default: {
-                break
-            }
-        }
+  renderSwitch () {
+    switch (this.props.info) {
+      case 'Acasa':
+        return <Acasa handleClick={this.props.handleClick} />
+      case 'About':
+        return <About />
+      case 'Portofoliu':
+        return <Portofoliu />
+      case 'Tamplarie':
+        return <Tamplarie />
+      case 'Usi':
+        return <Usi />
+      case 'Cortine':
+        return <Cortine />
+      case 'Accesorii':
+        return <Accesorii />
+      case 'Contact':
+        return <Contact />
+      default: {
+        break
+      }
     }
+  }
 
-    render() {
-        return (
-            <Content>
-                {this.renderSwitch()}
-            </Content>
-        )
-    }
+  render () {
+    return (
+      <Content>
+        {this.renderSwitch()}
+      </Content>
+    )
+  }
 }
 
 export default Head

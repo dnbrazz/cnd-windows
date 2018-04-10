@@ -14,14 +14,14 @@ class Foot extends Component {
   render () {
     return (
       <div>
-      <Footer style={style}>
-        <Icon type="facebook" style={{ fontSize: 40, padding: '5px' }}/>
-        <Icon type="instagram" style={{ fontSize: 40, padding: '5px' }}/>
-        <Icon type="youtube" style={{ fontSize: 40, padding: '5px' }}/>
-      </Footer>
-      <Footer style={style}>
+        <Footer style={style}>
+          <Icon type='facebook' style={{ fontSize: 40, padding: '5px' }} />
+          <Icon type='instagram' style={{ fontSize: 40, padding: '5px' }} />
+          <Icon type='youtube' style={{ fontSize: 40, padding: '5px' }} />
+        </Footer>
+        <Footer style={style}>
         CND Windows ©2018 Toate drepturile rezervate
-      </Footer>
+        </Footer>
       </div>
     )
   }
