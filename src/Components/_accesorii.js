@@ -5,6 +5,7 @@ import Plase from './categorii/_plase'
 import Glafuri from './categorii/_glafuri'
 import Praguri from './categorii/_praguri'
 import SwipeableViews from 'react-swipeable-views'
+import { textLG, textSM } from './constructor/_const'
 
 const style2 = {
   borderBottom: '1px solid #000',
@@ -21,7 +22,8 @@ class Accesorii extends Component {
     super()
     this.state = {
       slideIndex: 0,
-      screenWidth: 12
+      screenWidth: 12,
+      letterSpacing: '2px'
     }
     this.onClick = this.handleChange.bind(this)
   }
@@ -38,10 +40,10 @@ class Accesorii extends Component {
 
     componentDidMount () {
       let width = window.innerWidth
-      if (width <= 992) {
-        this.setState({screenWidth: 12})
+      if (width < 992) {
+        this.setState({screenWidth: textSM.size, letterSpacing: textSM.spacing})
       } else {
-        this.setState({screenWidth: 15})
+        this.setState({screenWidth: textLG.size, letterSpacing: textLG.spacing})
       }
     }
 
@@ -53,7 +55,7 @@ class Accesorii extends Component {
         color: '#fff',
         fontSize: this.state.screenWidth,
         textTransform: 'none',
-        letterSpacing: '1px'
+        letterSpacing: this.state.letterSpacing
       }
       return (
         <div style={style}>
@@ -67,7 +69,7 @@ class Accesorii extends Component {
             </Col>
           </Row>
           <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={style}>
-            <Plase />
+            <Plase SM={this.props.SM} />
             <Glafuri />
             <Praguri />
           </SwipeableViews>

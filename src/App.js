@@ -28,26 +28,6 @@ var style = {
   backgroundColor: '#222'
 }
 
-var iconStyle = {
-  height: '40px',
-  width: '100%',
-  cursor: 'pointer'
-}
-
-var dialogStyle = {
-  fontWeight: 'bold',
-  color: '#fff',
-  fontSize: '16px'
-}
-
-var contactStyle = {
-  textAlign: 'center',
-  color: '#fff',
-  fontSize: '24px',
-  fontWeight: 'bold',
-  letterSpacing: '2px'
-}
-
 var toastStyle = {
   backgroundColor: '#222',
   color: '#ffc81c',
@@ -82,18 +62,10 @@ var btnStyle = {
 var centerText = {
   textAlign: 'center'
 }
-var config = {
-  apiKey: 'AIzaSyDkcFTtM0icH686vP2ZMu1LDYnUKCRrop4',
-  authDomain: 'cndwindows-ro.firebaseapp.com',
-  databaseURL: 'https://cndwindows-ro.firebaseio.com',
-  projectId: 'cndwindows-ro',
-  storageBucket: 'cndwindows-ro.appspot.com',
-  messagingSenderId: '894816752251'
-}
 
 class App extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       slideIndex: 0,
       open: false,
@@ -105,23 +77,51 @@ class App extends Component {
       email: null,
       telefon: null,
       mesaj: null,
-      animate: false
+      animate: false,
+      width: 0,
+      fontSize: '',
+      letterSpacing: '',
+      color: '#fff',
+      fontWeight: 'bold',
+      iconHeight: ''
+
     }
     this.onClick = this.handleChange.bind(this)
   }
 
-  componentWillMount () {
-    if (!firebase.apps.length) {
-      firebase.initializeApp(config)
-    }
+  // componentWillMount () {
+  // if (!firebase.apps.length) {
+  //   firebase.initializeApp(config)
+  // }
 
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({ ...this, logged: true })
-      } else {
-        this.setState({ ...this, logged: false })
-      }
-    })
+  // firebase.auth().onAuthStateChanged((user) => {
+  //   if (user) {
+  //     this.setState({ ...this, logged: true })
+  //   } else {
+  //     this.setState({ ...this, logged: false })
+  //   }
+  // })
+  // }
+
+  componentWillMount () {
+    let width = window.innerWidth
+    if (width < 900) {
+      this.setState({
+        SM: true,
+        fontSize: '12px',
+        letterSpacing: '0px',
+        fontWeight: 'normal',
+        iconHeight: '30px'
+      })
+    } else {
+      this.setState({
+        SM: false,
+        fontSize: '16px',
+        letterSpacing: '2px',
+        fontWeight: 'bold',
+        iconHeight: '40px'
+      })
+    }
   }
 
   handleOpen = () => {
@@ -207,14 +207,14 @@ class App extends Component {
         <Router>
           <Paper zDepth={5} rounded={false} style={style}>
             <Layout>
-              <Head handleChange={this.handleChange} slideIndex={this.state.slideIndex} />
+              <Head SM={this.state.SM} handleChange={this.handleChange} slideIndex={this.state.slideIndex} />
               <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={darkStyle} animateHeight={this.state.animate}>
-                <Acasa loaded={() => { this.setState({animate: true}) }} />
-                <Portofoliu config={config} />
-                <Tamplarie />
-                <Accesorii />
-                <Compartimentari />
-                <Cortine />
+                <Acasa SM={this.state.SM} loaded={() => { this.setState({animate: true}) }} />
+                <Portofoliu />
+                <Tamplarie SM={this.state.SM} />
+                <Accesorii SM={this.state.SM} />
+                <Compartimentari SM={this.state.SM} />
+                <Cortine SM={this.state.SM} />
               </SwipeableViews>
             </Layout>
             <FlatButton onClick={() => this.handleOpen()} fullWidth label='Contacteaza-ne!' style={{ backgroundColor: yellowColor.color }} labelStyle={btnStyle} />
@@ -223,17 +223,17 @@ class App extends Component {
               <Row gutter={8} type='flex' justify='space-around'>
                 <ColAntd span={8} style={centerText} onClick={() => this.select(0)}>
                   <a href='tel:0722-222-222'>
-                    <IconCall style={iconStyle} hoverColor={yellowColor.color} /></a><br />
-                  <div style={dialogStyle}>Contacteaza Telefonic</div>
+                    <IconCall style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /></a><br />
+                  <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Contacteaza Telefonic</div>
                 </ColAntd>
                 <ColAntd span={8} style={centerText} onClick={() => this.select(1)}>
                   <a href='mailto:info@cndwindows.ro'>
-                    <IconMail style={iconStyle} hoverColor={yellowColor.color} /></a><br />
-                  <div style={dialogStyle}>Trimite un Mail</div>
+                    <IconMail style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /></a><br />
+                  <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Trimite un Mail</div>
                 </ColAntd>
                 <ColAntd span={8} style={centerText} onClick={() => this.select(2)}>
-                  <IconChat style={iconStyle} hoverColor={yellowColor.color} /><br />
-                  <div style={dialogStyle}>Lasa un Mesaj</div>
+                  <IconChat style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /><br />
+                  <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Lasa un Mesaj</div>
                 </ColAntd>
               </Row>
             </Dialog>
@@ -241,24 +241,24 @@ class App extends Component {
               <Row>
                 <ColAntd>
                   <Row>
-                    <div style={contactStyle}> Intra in Contact!</div>
-                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, color: '#fff' }} floatingLabelText='Nume' onChange={(nume) => {
+                    <div style={{textAlign: 'center', color: '#fff', fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}}> Intra in Contact!</div>
+                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, color: '#fff', fontSize: this.state.fontSize }} floatingLabelText='Nume' onChange={(nume) => {
                       this.setState({ ...this, nume: nume.target.value })
                     }} />
                     <br />
-                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10 }} floatingLabelText='Email' onChange={(email) => {
+                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, fontSize: this.state.fontSize }} floatingLabelText='Email' onChange={(email) => {
                       this.setState({ ...this, email: email.target.value })
                     }} />
                     <br />
-                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10 }} floatingLabelText='Telefon' onChange={(telefon) => {
+                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, fontSize: this.state.fontSize }} floatingLabelText='Telefon' onChange={(telefon) => {
                       this.setState({ ...this, telefon: telefon.target.value })
                     }} />
                     <br />
-                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10 }} floatingLabelText='Mesaj' multiLine rows={4} rowsMax={10} onChange={(mesaj) => {
+                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, fontSize: this.state.fontSize }} floatingLabelText='Mesaj' multiLine rows={4} rowsMax={10} onChange={(mesaj) => {
                       this.setState({ ...this, mesaj: mesaj.target.value })
                     }} />
                     <br /><br />
-                    <FlatButton onClick={() => this.handleSubmit()} fullWidth label='Trimite Mesaj' style={{ backgroundColor: '#ffc81c' }} labelStyle={{ color: '#fff', textTransform: 'none', fontSize: '20px', fontWeight: 'bold' }} />
+                    <FlatButton onClick={() => this.handleSubmit()} fullWidth label='Trimite Mesaj' style={{ backgroundColor: '#ffc81c' }} labelStyle={{ color: '#fff', textTransform: 'none', fontSize: this.state.fontSize, fontWeight: this.state.fontWeight }} />
                   </Row>
                 </ColAntd>
               </Row>

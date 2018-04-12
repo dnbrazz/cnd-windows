@@ -3,6 +3,7 @@ import ImageGallery from 'react-image-gallery'
 // eslint-disable-next-line
 import ReactFireMixin from 'reactfire'
 import firebase from 'firebase'
+import { configFirebase } from './constructor/_const'
 
 import { Row, Col } from 'antd'
 
@@ -10,11 +11,10 @@ class Portofoliu extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      album: [],
-      config: this.props.config
+      album: []
     }
     if (!firebase.apps.length) {
-      firebase.initializeApp(this.state.config)
+      firebase.initializeApp(configFirebase)
     }
   }
 
