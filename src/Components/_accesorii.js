@@ -5,7 +5,6 @@ import Plase from './categorii/_plase'
 import Glafuri from './categorii/_glafuri'
 import Praguri from './categorii/_praguri'
 import SwipeableViews from 'react-swipeable-views'
-import { textLG, textSM } from './constructor/_const'
 
 const style2 = {
   borderBottom: '1px solid #000',
@@ -21,9 +20,7 @@ class Accesorii extends Component {
   constructor () {
     super()
     this.state = {
-      slideIndex: 0,
-      screenWidth: 12,
-      letterSpacing: '2px'
+      slideIndex: 0
     }
     this.onClick = this.handleChange.bind(this)
   }
@@ -38,22 +35,28 @@ class Accesorii extends Component {
 
     }
 
-    componentDidMount () {
-      let width = window.innerWidth
-      if (width < 992) {
-        this.setState({screenWidth: textSM.size, letterSpacing: textSM.spacing})
+    componentWillMount () {
+      if (this.props.SM) {
+        this.setState({
+          fontSize: '12px',
+          letterSpacing: '0px',
+          fontSizeStep: '18px',
+          iconSize: '15px'
+        })
       } else {
-        this.setState({screenWidth: textLG.size, letterSpacing: textLG.spacing})
+        this.setState({
+          fontSize: '15px',
+          letterSpacing: '2px',
+          fontSizeStep: '30px',
+          iconSize: '20px'
+        })
       }
     }
 
-    componentDidUpdate () {
-
-    }
     render () {
       const stil = {
         color: '#fff',
-        fontSize: this.state.screenWidth,
+        fontSize: this.state.fontSize,
         textTransform: 'none',
         letterSpacing: this.state.letterSpacing
       }
@@ -68,10 +71,10 @@ class Accesorii extends Component {
               </Tabs>
             </Col>
           </Row>
-          <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={style}>
+          <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={style} animateHeight>
             <Plase SM={this.props.SM} />
-            <Glafuri />
-            <Praguri />
+            <Glafuri SM={this.props.SM} />
+            <Praguri SM={this.props.SM} />
           </SwipeableViews>
         </div>
       )

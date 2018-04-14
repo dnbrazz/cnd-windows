@@ -10,7 +10,7 @@ import { Col, Row } from 'antd'
 import IconProfile from 'material-ui/svg-icons/editor/border-all'
 import IconArrowUp from 'material-ui/svg-icons/action/change-history'
 
-class Praguri extends Component {
+class Compartimentari extends Component {
   constructor () {
     super()
     this.state = {
@@ -38,13 +38,14 @@ class Praguri extends Component {
       })
     }
   }
+
   render () {
     return (
       <Stepper activeStep={1} linear={false} orientation='vertical'>
         <Step active>
           <StepLabel icon={<IconProfile />}>
             <StepButton>
-              <div style={{ textAlign: 'center', color: '#fff', fontSize: this.state.fontSizeStep, fontWeight: 'bold', letterSpacing: this.state.letterSpacing, padding: 20 }}> Praguri</div>
+              <div style={{ textAlign: 'center', color: '#fff', fontSize: this.state.fontSizeStep, fontWeight: 'bold', letterSpacing: this.state.letterSpacing, padding: 20 }}> Compartimentari Sticla</div>
             </StepButton>
           </StepLabel>
           <StepContent>
@@ -64,4 +65,4 @@ class Praguri extends Component {
   }
 }
 
-export default Praguri
+export default Compartimentari

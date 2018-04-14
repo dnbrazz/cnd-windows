@@ -77,7 +77,7 @@ class Acasa extends Component {
               </CardText>
             </Card>
           </Col>
-          <Col xs={24} sm={24} md={8} lg={8} >
+          <Col xs={12} sm={12} md={8} lg={8} >
             <Card>
               <CardMedia overlay={<CardTitle title='Transport si Montaj' titleStyle={{fontSize: this.state.fontSizeTitle, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} />}>
                 <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Ftransport_instalare_500x300_lg.jpg?alt=media&token=631e6588-fb49-4042-8624-e2c8eb3b081a' alt='Transport si Montaj Termopane PVC Aluminiu' />
@@ -85,11 +85,10 @@ class Acasa extends Component {
               <CardText style={{fontSize: this.state.fontSize}}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
               </CardText>
             </Card>
           </Col>
-          <Col xs={24} sm={24} md={8} lg={8} >
+          <Col xs={12} sm={12} md={8} lg={8} >
             <Card>
               <CardMedia
                 overlay={<CardTitle title='Oferte Dealeri' titleStyle={{fontSize: this.state.fontSizeTitle, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} />}
@@ -99,7 +98,6 @@ class Acasa extends Component {
               <CardText style={{fontSize: this.state.fontSize}}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
               </CardText>
             </Card>
           </Col>

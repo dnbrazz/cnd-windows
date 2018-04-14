@@ -117,11 +117,6 @@ class Plase extends Component {
           </StepLabel>
           <StepContent>
             <Row type='flex' justify='space-around' align='middle'>
-              <Col xs={24} sm={24} md={8} lg={8} style={{ paddingTop: this.state.iconSize, paddingBottom: this.state.iconSize }}>
-                <CardMedia style={styleColor}>
-                  <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Fplase-insecte%2Ffda22f_a1f918abf5734c73aeb2d98b1021f8ba.png?alt=media&token=d1a3a72f-8398-41d0-8f04-d4a0073d171c' alt='Termopan Plase Tantari Rulou' />
-                </CardMedia>
-              </Col>
               <Col xs={24} sm={24} md={16} lg={16} style={{ paddingTop: 50 }}>
                 <Row>
                   <Col xs={3} sm={3} md={2} lg={2}>
@@ -179,6 +174,11 @@ class Plase extends Component {
                     <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>Se pot realiza pana la 2m latime si 2.4m inaltime</div>
                   </Col>
                 </Row>
+              </Col>
+              <Col xs={24} sm={24} md={8} lg={8} style={{ paddingTop: this.state.iconSize, paddingBottom: this.state.iconSize }}>
+                <CardMedia style={styleColor}>
+                  <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Fplase-insecte%2Ffda22f_a1f918abf5734c73aeb2d98b1021f8ba.png?alt=media&token=d1a3a72f-8398-41d0-8f04-d4a0073d171c' alt='Termopan Plase Tantari Rulou' />
+                </CardMedia>
               </Col>
             </Row>
           </StepContent>
