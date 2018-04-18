@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Col, Carousel, Row } from 'antd'
 import { Card, CardMedia, CardTitle, CardText } from 'material-ui/Card'
+import IconChecked from 'material-ui/svg-icons/action/done'
+import IconInfo from 'material-ui/svg-icons/action/info'
 
 const darkStyle = {
   backgroundColor: '#333'
@@ -21,14 +23,14 @@ class Acasa extends Component {
       this.setState({
         fontSize: '12px',
         letterSpacing: '0px',
-        fontSizeTitle: '18px',
+        fontSizeTitle: '16px',
         iconSize: '15px'
       })
     } else {
       this.setState({
         fontSize: '15px',
         letterSpacing: '2px',
-        fontSizeTitle: '30px',
+        fontSizeTitle: '20px',
         iconSize: '20px'
       })
     }
@@ -73,31 +75,31 @@ class Acasa extends Component {
                 <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Fproiectare_ferestre_lg.png?alt=media&token=1479fd0e-9f63-4ae2-b946-cb98ae3c8d0e' alt='Termopane PVC Salamander Oferta' onLoad={this.props.loaded} />
               </CardMedia>
               <CardText style={{fontSize: this.state.fontSize}}>
-                <span>&nbsp;&nbsp;</span> Pentru ca acordam o atentie deosebita etapei de proiectare, ofertele noastre vin insotite de un proiect vizual care listeaza caracteristicile tehnice, functionale si de design ale produsului comandat.
+                <IconChecked style={{height: this.state.iconSize}} /> Pentru ca acordam o atentie deosebita etapei de proiectare, ofertele noastre vin insotite de un proiect vizual care listeaza caracteristicile tehnice, functionale si de design ale produsului comandat.<br />
+                <IconInfo style={{height: this.state.iconSize}} /> Nu ezitati sa ne contactati fie telefonic sau folosind butonul de contact pentru a ne lasa un mesaj!
               </CardText>
             </Card>
           </Col>
-          <Col xs={12} sm={12} md={8} lg={8} >
+          <Col xs={24} sm={24} md={8} lg={8} >
             <Card>
               <CardMedia overlay={<CardTitle title='Transport si Montaj' titleStyle={{fontSize: this.state.fontSizeTitle, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} />}>
                 <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Ftransport_instalare_500x300_lg.jpg?alt=media&token=631e6588-fb49-4042-8624-e2c8eb3b081a' alt='Transport si Montaj Termopane PVC Aluminiu' />
               </CardMedia>
               <CardText style={{fontSize: this.state.fontSize}}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                <IconChecked style={{height: this.state.iconSize}} /> Transportul comenzilor este realizat cu autoutilitare echipate cu stative speciale pentru a nu deteriora tamplaria sau geamurile.<br />
+                <IconChecked style={{height: this.state.iconSize}} /> Pentru a asigura calitatea, montajul este executat de catre personal calificat ce respecta recomandarile de montaj, in conformitate cu normele existente
               </CardText>
             </Card>
           </Col>
-          <Col xs={12} sm={12} md={8} lg={8} >
+          <Col xs={24} sm={24} md={8} lg={8} >
             <Card>
-              <CardMedia
-                overlay={<CardTitle title='Oferte Dealeri' titleStyle={{fontSize: this.state.fontSizeTitle, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} />}
-              >
+              <CardMedia overlay={<CardTitle title='Oferte Dealeri' titleStyle={{fontSize: this.state.fontSizeTitle, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} />}>
                 <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Foferte_dealeri_500x300_lg.jpg?alt=media&token=9a2195e6-508a-4563-b7a4-f2ea6e504d89' alt='Oferte pentru dealeri Tamplarie PVC Termopan' />
               </CardMedia>
               <CardText style={{fontSize: this.state.fontSize}}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                <IconChecked style={{height: this.state.iconSize}} /> Oferim partenerilor nostri preturi de producator.<br />
+                <IconChecked style={{height: this.state.iconSize}} /> Termen de executie 2 - 7 zile. (in functie de dimensiunea lucrarii)<br />
+                <IconChecked style={{height: this.state.iconSize}} /> La cerere oferim proiectarea vizuala a tamplariei executate cat si consultanta la elaborarea ofertelor
               </CardText>
             </Card>
           </Col>

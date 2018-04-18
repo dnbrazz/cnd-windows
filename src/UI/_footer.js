@@ -15,9 +15,15 @@ class Foot extends Component {
     return (
       <div>
         <Footer style={style}>
-          <Icon type='facebook' style={{ fontSize: 40, padding: '5px' }} />
-          <Icon type='instagram' style={{ fontSize: 40, padding: '5px' }} />
-          <Icon type='youtube' style={{ fontSize: 40, padding: '5px' }} />
+          <a style={{color: '#fff'}} href='https://www.facebook.com/pg/cndwindows/services/' target='_blank' rel='noopener noreferrer'>
+            <Icon type='facebook' style={{ fontSize: 40, padding: '5px' }} />
+          </a>
+          <a style={{color: '#fff'}} href='https://www.instagram.com/' target='_blank' rel='noopener noreferrer'>
+            <Icon type='instagram' style={{ fontSize: 40, padding: '5px' }} />
+          </a>
+          <a style={{color: '#fff'}} href='https://www.youtube.com/' target='_blank' rel='noopener noreferrer'>
+            <Icon type='youtube' style={{ fontSize: 40, padding: '5px' }} />
+          </a>
         </Footer>
         <Footer style={style}>
         CND Windows ©2018 Toate drepturile rezervate

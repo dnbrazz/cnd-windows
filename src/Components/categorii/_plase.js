@@ -184,6 +184,78 @@ class Plase extends Component {
           </StepContent>
         </Step>
         <Step active>
+          <StepLabel icon={<IconCulori />}>
+            <StepButton>
+              <div style={{ textAlign: 'center', color: '#fff', fontSize: this.state.fontSizeStep, fontWeight: 'bold', letterSpacing: this.state.letterSpacing, padding: 20 }}> Glafuri Interioare / Exterioare</div>
+            </StepButton>
+          </StepLabel>
+          <StepContent>
+            <Row type='flex' justify='space-around' align='middle'>
+              <Col xs={24} sm={24} md={24} lg={24} style={{ paddingTop: 50 }}>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                  </Col>
+                </Row>
+              </Col>
+              <Col xs={24} sm={24} md={8} lg={8} style={{ paddingTop: this.state.iconSize, paddingBottom: this.state.iconSize }}>
+                <CardMedia style={styleColor} />
+              </Col>
+            </Row>
+          </StepContent>
+        </Step>
+        <Step active>
           <StepLabel icon={<IconArrowUp />} />
           <StepContent style={{height: 20}}>
             <div />

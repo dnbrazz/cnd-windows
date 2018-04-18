@@ -40,14 +40,16 @@ class Tamplarie extends Component {
         fontSize: '12px',
         letterSpacing: '0px',
         fontSizeStep: '18px',
-        iconSize: '15px'
+        iconSize: '15px',
+        fontWeight: 'normal'
       })
     } else {
       this.setState({
         fontSize: '15px',
         letterSpacing: '2px',
         fontSizeStep: '30px',
-        iconSize: '20px'
+        iconSize: '20px',
+        fontWeight: 'bold'
       })
     }
   }
@@ -154,52 +156,52 @@ class Tamplarie extends Component {
               </StepLabel>
               <StepContent>
                 <Row gutter={4} style={{ paddingTop: this.state.iconSize, paddingBottom: this.state.iconSize }}>
-                  <Col xs={12} sm={6} md={3} lg={3}>
+                  <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Falb-antracit.png?alt=media&token=470f2483-bd0a-4e78-a06b-73c6ca00a90d' alt='Termopan Alb Antracit' />
-                      <div className='overlay'>Alb - Antracit</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Alb - Antracit</div>
                     </CardMedia>
                   </Col>
-                  <Col xs={12} sm={6} md={3} lg={3}>
+                  <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Falb.PNG?alt=media&token=291acfd7-43cc-4232-9e98-07378fac0496' alt='Termopan Alb' />
-                      <div className='overlay'>Alb</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Alb</div>
                     </CardMedia>
                   </Col>
-                  <Col xs={12} sm={6} md={3} lg={3}>
+                  <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fantracit.PNG?alt=media&token=012fcab1-9e67-42d5-9070-c3d867f0aa77' alt='Termopan Antracit' />
-                      <div className='overlay'>Antracit</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Antracit</div>
                     </CardMedia>
                   </Col>
-                  <Col xs={12} sm={6} md={3} lg={3}>
+                  <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fgolden-oak.PNG?alt=media&token=c06941d2-4a2b-4f31-b337-8b65cc4e20db' alt='Termopan Golden Oak' />
-                      <div className='overlay'>Golden Oak</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Golden Oak</div>
                     </CardMedia>
                   </Col>
-                  <Col xs={12} sm={6} md={3} lg={3}>
+                  <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fmahagoni.PNG?alt=media&token=8fa2dd33-4ac8-4071-b3a6-2f1517b16470' alt='' />
-                      <div className='overlay'>Mahagoni</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Mahagoni</div>
                     </CardMedia>
                   </Col>
-                  <Col xs={12} sm={6} md={3} lg={3}>
+                  <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fmooreiche.PNG?alt=media&token=4627e065-1022-4edd-8ec6-28723b77e078' alt='' />
-                      <div className='overlay'>Mooreiche</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Mooreiche</div>
                     </CardMedia>
                   </Col>
-                  <Col xs={12} sm={6} md={3} lg={3}>
+                  <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fnusbaum.PNG?alt=media&token=7cd42875-d357-4d11-b988-3464ce439b7d' alt='' />
-                      <div className='overlay'>Nusbaum</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Nusbaum</div>
                     </CardMedia>
                   </Col>
-                  <Col xs={12} sm={6} md={3} lg={3}>
+                  <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Ftiama.PNG?alt=media&token=e0e801ff-1193-4b1f-ae1b-feb8dd1c0087' alt='' />
-                      <div className='overlay'>Tiama</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Tiama</div>
                     </CardMedia>
                   </Col>
                 </Row>

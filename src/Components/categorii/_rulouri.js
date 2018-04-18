@@ -44,7 +44,7 @@ class Glafuri extends Component {
         <Step active>
           <StepLabel icon={<IconProfile />}>
             <StepButton>
-              <div style={{ textAlign: 'center', color: '#fff', fontSize: this.state.fontSizeStep, fontWeight: 'bold', letterSpacing: this.state.letterSpacing, padding: 20 }}> Glafuri</div>
+              <div style={{ textAlign: 'center', color: '#fff', fontSize: this.state.fontSizeStep, fontWeight: 'bold', letterSpacing: this.state.letterSpacing, padding: 20 }}> Rulouri</div>
             </StepButton>
           </StepLabel>
           <StepContent>

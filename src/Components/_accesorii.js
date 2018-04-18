@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Tabs, Tab } from 'material-ui/Tabs'
 import { Col, Row } from 'react-bootstrap'
 import Plase from './categorii/_plase'
-import Glafuri from './categorii/_glafuri'
+import Glafuri from './categorii/_rulouri'
 import Praguri from './categorii/_praguri'
 import SwipeableViews from 'react-swipeable-views'
 
@@ -20,7 +20,8 @@ class Accesorii extends Component {
   constructor () {
     super()
     this.state = {
-      slideIndex: 0
+      slideIndex: 0,
+      animateHeight: false
     }
     this.onClick = this.handleChange.bind(this)
   }
@@ -31,10 +32,9 @@ class Accesorii extends Component {
       })
     }
 
-    componentWillReceiveProps () {
-
+    componentDidMount () {
+      this.setState({animateHeight: true})
     }
-
     componentWillMount () {
       if (this.props.SM) {
         this.setState({
@@ -65,13 +65,13 @@ class Accesorii extends Component {
           <Row type='flex' style={style}>
             <Col style={style2} sm={12} md={12} lg={12} >
               <Tabs onChange={this.handleChange} value={this.state.slideIndex} tabItemContainerStyle={style} inkBarStyle={{ backgroundColor: '#ffc81c' }}>
-                <Tab label='Plase insecte' value={0} style={stil} />
-                <Tab label='Glafuri' value={1} style={stil} />
+                <Tab label='Plase insecte / Glafuri' value={0} style={stil} />
+                <Tab label='Rulouri / Usi de garaj' value={1} style={stil} />
                 <Tab label='Praguri' value={2} style={stil} />
               </Tabs>
             </Col>
           </Row>
-          <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={style} animateHeight>
+          <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={style} animateHeight={this.state.animateHeight}>
             <Plase SM={this.props.SM} />
             <Glafuri SM={this.props.SM} />
             <Praguri SM={this.props.SM} />

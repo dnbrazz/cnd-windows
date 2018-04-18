@@ -21,7 +21,6 @@ import TextField from 'material-ui/TextField'
 import FlatButton from 'material-ui/FlatButton'
 import firebase from 'firebase'
 import Snackbar from 'material-ui/Snackbar'
-import { BrowserRouter as Router } from 'react-router-dom'
 import './App.css'
 
 var style = {
@@ -204,74 +203,72 @@ class App extends Component {
   render () {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-        <Router>
-          <Paper zDepth={5} rounded={false} style={style}>
-            <Layout>
-              <Head SM={this.state.SM} handleChange={this.handleChange} slideIndex={this.state.slideIndex} />
-              <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={darkStyle} animateHeight={this.state.animate}>
-                <Acasa SM={this.state.SM} loaded={() => { this.setState({animate: true}) }} />
-                <Portofoliu />
-                <Tamplarie SM={this.state.SM} />
-                <Accesorii SM={this.state.SM} />
-                <Compartimentari SM={this.state.SM} />
-                <Cortine SM={this.state.SM} />
-              </SwipeableViews>
-            </Layout>
-            <FlatButton onClick={() => this.handleOpen()} fullWidth label='Contacteaza-ne!' style={{ backgroundColor: yellowColor.color }} labelStyle={btnStyle} />
-            <Foot />
-            <Dialog modal={false} open={this.state.open} onRequestClose={this.handleClose} >
-              <Row gutter={8} type='flex' justify='space-around'>
-                <ColAntd span={8} style={centerText} onClick={() => this.select(0)}>
-                  <a href='tel:0722-222-222'>
-                    <IconCall style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /></a><br />
-                  <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Contacteaza Telefonic</div>
-                </ColAntd>
-                <ColAntd span={8} style={centerText} onClick={() => this.select(1)}>
-                  <a href='mailto:info@cndwindows.ro'>
-                    <IconMail style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /></a><br />
-                  <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Trimite un Mail</div>
-                </ColAntd>
-                <ColAntd span={8} style={centerText} onClick={() => this.select(2)}>
-                  <IconChat style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /><br />
-                  <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Lasa un Mesaj</div>
-                </ColAntd>
-              </Row>
-            </Dialog>
-            <Dialog modal={false} open={this.state.msg} onRequestClose={this.handleCloseMsg}>
-              <Row>
-                <ColAntd>
-                  <Row>
-                    <div style={{textAlign: 'center', color: '#fff', fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}}> Intra in Contact!</div>
-                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, color: '#fff', fontSize: this.state.fontSize }} floatingLabelText='Nume' onChange={(nume) => {
-                      this.setState({ ...this, nume: nume.target.value })
-                    }} />
-                    <br />
-                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, fontSize: this.state.fontSize }} floatingLabelText='Email' onChange={(email) => {
-                      this.setState({ ...this, email: email.target.value })
-                    }} />
-                    <br />
-                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, fontSize: this.state.fontSize }} floatingLabelText='Telefon' onChange={(telefon) => {
-                      this.setState({ ...this, telefon: telefon.target.value })
-                    }} />
-                    <br />
-                    <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, fontSize: this.state.fontSize }} floatingLabelText='Mesaj' multiLine rows={4} rowsMax={10} onChange={(mesaj) => {
-                      this.setState({ ...this, mesaj: mesaj.target.value })
-                    }} />
-                    <br /><br />
-                    <FlatButton onClick={() => this.handleSubmit()} fullWidth label='Trimite Mesaj' style={{ backgroundColor: '#ffc81c' }} labelStyle={{ color: '#fff', textTransform: 'none', fontSize: this.state.fontSize, fontWeight: this.state.fontWeight }} />
-                  </Row>
-                </ColAntd>
-              </Row>
-            </Dialog>
-            <Snackbar
-              contentStyle={toastStyle}
-              bodyStyle={darkStyle}
-              open={this.state.toast}
-              message={this.state.toastmsg}
-              autoHideDuration={4000}
-              onRequestClose={this.handleCloseToast} />
-          </Paper>
-        </Router>
+        <Paper zDepth={5} rounded={false} style={style}>
+          <Layout>
+            <Head SM={this.state.SM} handleChange={this.handleChange} slideIndex={this.state.slideIndex} />
+            <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={darkStyle} animateHeight={this.state.animate}>
+              <Acasa SM={this.state.SM} loaded={() => { this.setState({animate: true}) }} />
+              <Portofoliu />
+              <Tamplarie SM={this.state.SM} />
+              <Accesorii SM={this.state.SM} />
+              <Compartimentari SM={this.state.SM} />
+              <Cortine SM={this.state.SM} />
+            </SwipeableViews>
+          </Layout>
+          <FlatButton onClick={() => this.handleOpen()} fullWidth label='Contacteaza-ne!' style={{ backgroundColor: yellowColor.color }} labelStyle={btnStyle} />
+          <Foot />
+          <Dialog modal={false} open={this.state.open} onRequestClose={this.handleClose} >
+            <Row gutter={8} type='flex' justify='space-around'>
+              <ColAntd span={8} style={centerText} onClick={() => this.select(0)}>
+                <a href='tel:0722-222-222'>
+                  <IconCall style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /></a><br />
+                <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Contacteaza Telefonic</div>
+              </ColAntd>
+              <ColAntd span={8} style={centerText} onClick={() => this.select(1)}>
+                <a href='mailto:info@cndwindows.ro'>
+                  <IconMail style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /></a><br />
+                <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Trimite un Mail</div>
+              </ColAntd>
+              <ColAntd span={8} style={centerText} onClick={() => this.select(2)}>
+                <IconChat style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /><br />
+                <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Lasa un Mesaj</div>
+              </ColAntd>
+            </Row>
+          </Dialog>
+          <Dialog modal={false} open={this.state.msg} onRequestClose={this.handleCloseMsg}>
+            <Row>
+              <ColAntd>
+                <Row>
+                  <div style={{textAlign: 'center', color: '#fff', fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}}> Intra in Contact!</div>
+                  <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, color: '#fff', fontSize: this.state.fontSize }} floatingLabelText='Nume' onChange={(nume) => {
+                    this.setState({ ...this, nume: nume.target.value })
+                  }} />
+                  <br />
+                  <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, fontSize: this.state.fontSize }} floatingLabelText='Email' onChange={(email) => {
+                    this.setState({ ...this, email: email.target.value })
+                  }} />
+                  <br />
+                  <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, fontSize: this.state.fontSize }} floatingLabelText='Telefon' onChange={(telefon) => {
+                    this.setState({ ...this, telefon: telefon.target.value })
+                  }} />
+                  <br />
+                  <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, fontSize: this.state.fontSize }} floatingLabelText='Mesaj' multiLine rows={4} rowsMax={10} onChange={(mesaj) => {
+                    this.setState({ ...this, mesaj: mesaj.target.value })
+                  }} />
+                  <br /><br />
+                  <FlatButton onClick={() => this.handleSubmit()} fullWidth label='Trimite Mesaj' style={{ backgroundColor: '#ffc81c' }} labelStyle={{ color: '#333', textTransform: 'none', fontSize: this.state.fontSize, fontWeight: this.state.fontWeight }} />
+                </Row>
+              </ColAntd>
+            </Row>
+          </Dialog>
+          <Snackbar
+            contentStyle={toastStyle}
+            bodyStyle={darkStyle}
+            open={this.state.toast}
+            message={this.state.toastmsg}
+            autoHideDuration={4000}
+            onRequestClose={this.handleCloseToast} />
+        </Paper>
       </MuiThemeProvider>
     )
   }
