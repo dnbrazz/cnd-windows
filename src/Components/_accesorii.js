@@ -32,7 +32,7 @@ class Accesorii extends Component {
     }
 
     componentDidMount () {
-      this.setState({animateHeight: true, slideIndex: 0})
+      this.setState({animateHeight: true})
     }
     componentWillMount () {
       if (this.props.SM) {
