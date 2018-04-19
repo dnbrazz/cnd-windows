@@ -3,7 +3,6 @@ import { Tabs, Tab } from 'material-ui/Tabs'
 import { Col, Row } from 'react-bootstrap'
 import Plase from './categorii/_plase'
 import Glafuri from './categorii/_rulouri'
-import Praguri from './categorii/_praguri'
 import SwipeableViews from 'react-swipeable-views'
 
 const style2 = {
@@ -33,7 +32,7 @@ class Accesorii extends Component {
     }
 
     componentDidMount () {
-      this.setState({animateHeight: true})
+      this.setState({animateHeight: true, slideIndex: 0})
     }
     componentWillMount () {
       if (this.props.SM) {
@@ -67,14 +66,12 @@ class Accesorii extends Component {
               <Tabs onChange={this.handleChange} value={this.state.slideIndex} tabItemContainerStyle={style} inkBarStyle={{ backgroundColor: '#ffc81c' }}>
                 <Tab label='Plase insecte / Glafuri' value={0} style={stil} />
                 <Tab label='Rulouri / Usi de garaj' value={1} style={stil} />
-                <Tab label='Praguri' value={2} style={stil} />
               </Tabs>
             </Col>
           </Row>
           <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={style} animateHeight={this.state.animateHeight}>
             <Plase SM={this.props.SM} />
             <Glafuri SM={this.props.SM} />
-            <Praguri SM={this.props.SM} />
           </SwipeableViews>
         </div>
       )
