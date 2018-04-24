@@ -62,7 +62,6 @@ class Head extends Component {
     } else {
       this.setState({screenWidth: textLG.size, letterSpacing: textLG.spacing})
     }
-    console.log(this.props.SM)
   }
   render () {
     return (
@@ -74,10 +73,10 @@ class Head extends Component {
           <Col xs={7} sm={4} md={4} style={{ padding: 15 }}>
             <Paper zDepth={1} rounded={false} style={{ backgroundColor: '#222', padding: '10px' }}>
               <Row style={{ fontSize: this.state.fontSize, backgroundColor: '#222' }}>
-                <CommunicationCall style={{ height: this.state.iconSize, paddingTop: '5px' }} /> 0722.222.222
+                <CommunicationCall style={{ height: this.state.iconSize, paddingTop: '5px' }} /> 0740.598.662 (Orange)
               </Row>
               <Row style={{ fontSize: this.state.fontSize, backgroundColor: '#222' }}>
-                <CommunicationEmail style={{ height: this.state.iconSize, paddingTop: '5px' }} /> info@cndwindows.ro
+                <CommunicationEmail style={{ height: this.state.iconSize, paddingTop: '5px' }} /> cndwindows.ro@gmail.com
               </Row>
             </Paper>
           </Col>

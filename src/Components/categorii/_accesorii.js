@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Tabs, Tab } from 'material-ui/Tabs'
 import { Col, Row } from 'react-bootstrap'
-import Plase from './categorii/_plase'
-import Glafuri from './categorii/_rulouri'
+import Plase from './_plase'
+import Glafuri from './_rulouri'
 import SwipeableViews from 'react-swipeable-views'
 
 const style2 = {
@@ -31,9 +31,6 @@ class Accesorii extends Component {
       })
     }
 
-    componentDidMount () {
-      this.setState({animateHeight: true})
-    }
     componentWillMount () {
       if (this.props.SM) {
         this.setState({
@@ -70,8 +67,8 @@ class Accesorii extends Component {
             </Col>
           </Row>
           <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={style} animateHeight={this.state.animateHeight}>
-            <Plase SM={this.props.SM} />
-            <Glafuri SM={this.props.SM} />
+            <Plase SM={this.props.SM} loaded={() => { this.setState({animateHeight: true}) }}/>
+            <Glafuri SM={this.props.SM} loaded={() => { this.setState({animateHeight: true}) }}/>
           </SwipeableViews>
         </div>
       )

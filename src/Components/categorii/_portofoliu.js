@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import ImageGallery from 'react-image-gallery'
-// eslint-disable-next-line
-import ReactFireMixin from 'reactfire'
 import firebase from 'firebase'
-import { configFirebase } from './constructor/_const'
-
+import { configFirebase } from '../constructor/_const'
 import { Row, Col } from 'antd'
 
 class Portofoliu extends Component {

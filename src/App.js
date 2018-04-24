@@ -1,26 +1,38 @@
 import React, { Component } from 'react'
+
+// Material UI
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 import SwipeableViews from 'react-swipeable-views'
 import Paper from 'material-ui/Paper'
-import { Layout, Row, Col as ColAntd } from 'antd'
-import Head from './UI/_header.js'
-import Foot from './UI/_footer.js'
-import Acasa from './Components/_acasa.js'
-import Portofoliu from './Components/_portofoliu.js'
-import Tamplarie from './Components/_tamplarie.js'
-import Compartimentari from './Components/_compartimentari.js'
-import Cortine from './Components/_cortine.js'
-import Accesorii from './Components/_accesorii.js'
+import TextField from 'material-ui/TextField'
+import FlatButton from 'material-ui/FlatButton'
+import Snackbar from 'material-ui/Snackbar'
 import Dialog from 'material-ui/Dialog'
+// Icons
 import IconCall from 'material-ui/svg-icons/communication/call'
 import IconChat from 'material-ui/svg-icons/communication/chat'
 import IconMail from 'material-ui/svg-icons/communication/mail-outline'
-import TextField from 'material-ui/TextField'
-import FlatButton from 'material-ui/FlatButton'
+
+// Ant Design
+import { Layout, Row, Col as ColAntd } from 'antd'
+
+// Components //
+// UI
+import Head from './UI/_header.js'
+import Foot from './UI/_footer.js'
+// Categorys
+import Acasa from './Components/categorii/_acasa.js'
+import Portofoliu from './Components/categorii/_portofoliu.js'
+import Tamplarie from './Components/categorii/_tamplarie.js'
+import Compartimentari from './Components/categorii/_compartimentari.js'
+import Cortine from './Components/categorii/_cortine.js'
+import Accesorii from './Components/categorii/_accesorii.js'
+
+// Firebase
 import firebase from 'firebase'
-import Snackbar from 'material-ui/Snackbar'
+
 import './App.css'
 
 var style = {
@@ -123,25 +135,28 @@ class App extends Component {
     }
   }
 
+  // Dialog Contact
   handleOpen = () => {
     this.setState({ open: true })
   }
-
   handleClose = () => {
     this.setState({ open: false })
   }
 
+  // Dialog Mesaj
   handleOpenMsg = () => {
     this.setState({ msg: true })
   }
-
   handleCloseMsg = () => {
     this.setState({ msg: false })
   }
 
+  // Toast Trimitere Mesaj
   handleCloseToast = () => {
     this.setState({ toast: false })
   }
+
+  // Firebase Sent MSG
   handleSubmit = () => {
     let dbCon = firebase.database().ref('/Mesaje')
     if (this.state.nume && this.state.email && this.state.telefon && this.state.mesaj) {
@@ -168,6 +183,7 @@ class App extends Component {
     }
   }
 
+  // Tabs MENUS
   handleChange = (value) => {
     if (value === 9) {
       this.setState({
@@ -180,17 +196,15 @@ class App extends Component {
     })
   }
 
+  // Contact BUTTON
   select = (key) => {
     switch (key) {
-      // Call
       case 0: {
         return this.setState({ open: false })
       }
-      // Email
       case 1: {
         return this.setState({ open: false })
       }
-      // Msg
       case 2: {
         return this.setState({ open: false, msg: true })
       }
@@ -215,17 +229,17 @@ class App extends Component {
               <Cortine SM={this.state.SM} />
             </SwipeableViews>
           </Layout>
-          <FlatButton onClick={() => this.handleOpen()} fullWidth label='Contacteaza-ne!' style={{ backgroundColor: yellowColor.color }} labelStyle={btnStyle} />
+          <FlatButton fullWidth onClick={() => this.handleOpen()} label='Contacteaza-ne!' style={{ backgroundColor: yellowColor.color }} labelStyle={btnStyle} />
           <Foot />
           <Dialog modal={false} open={this.state.open} onRequestClose={this.handleClose} >
             <Row gutter={8} type='flex' justify='space-around'>
               <ColAntd span={8} style={centerText} onClick={() => this.select(0)}>
-                <a href='tel:0722-222-222'>
+                <a href='tel:0740-598-662'>
                   <IconCall style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /></a><br />
                 <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Contacteaza Telefonic</div>
               </ColAntd>
               <ColAntd span={8} style={centerText} onClick={() => this.select(1)}>
-                <a href='mailto:info@cndwindows.ro'>
+                <a href='mailto:cndwindows.ro@gmail.com'>
                   <IconMail style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /></a><br />
                 <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Trimite un Mail</div>
               </ColAntd>
