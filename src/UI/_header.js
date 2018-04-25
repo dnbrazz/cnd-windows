@@ -8,7 +8,7 @@ import CommunicationCall from 'material-ui/svg-icons/communication/call'
 import CommunicationEmail from 'material-ui/svg-icons/communication/email'
 import Camera from 'material-ui/svg-icons/image/photo-camera'
 import Home from 'material-ui/svg-icons/action/home'
-import { textLG, textSM, artBackBlack, artTextWhite } from '../Components/constructor/_const'
+import { textLG, textSM, artBackBlack, artTextWhite, header, btn, menu } from '../Components/constructor/_const'
 
 const stildual = {
   color: '#222',
@@ -73,10 +73,10 @@ class Head extends Component {
           <Col xs={7} sm={4} md={4} style={{ padding: 15 }}>
             <Paper zDepth={1} rounded={false} style={{ backgroundColor: '#222', padding: '10px' }}>
               <Row style={{ fontSize: this.state.fontSize, backgroundColor: '#222' }}>
-                <CommunicationCall style={{ height: this.state.iconSize, paddingTop: '5px' }} /> 0740.598.662 (Orange)
+                <CommunicationCall style={{ height: this.state.iconSize, paddingTop: '5px' }} /> {btn.phone + ' (' + header.carrier + ')'}
               </Row>
               <Row style={{ fontSize: this.state.fontSize, backgroundColor: '#222' }}>
-                <CommunicationEmail style={{ height: this.state.iconSize, paddingTop: '5px' }} /> cndwindows.ro@gmail.com
+                <CommunicationEmail style={{ height: this.state.iconSize, paddingTop: '5px' }} /> {btn.mail}
               </Row>
             </Paper>
           </Col>
@@ -86,7 +86,7 @@ class Head extends Component {
                 <ActionAlarm style={{ height: this.state.iconSize, paddingTop: '5px' }} /> Program
               </Row>
               <Row style={{ fontSize: this.state.fontSize, backgroundColor: artBackBlack.backgroundColor }}>
-                <ActionToday style={{ height: this.state.iconSize, paddingTop: '5px' }} /> L - V : 07:00 - 16:00
+                <ActionToday style={{ height: this.state.iconSize, paddingTop: '5px' }} /> {'L - V : ' + header.openfrom + ' - ' + header.opento}
               </Row>
             </Paper>
           </Col>
@@ -101,10 +101,10 @@ class Head extends Component {
           </Col>
           <Col style={style2} xs={12} sm={12} md={9} lg={9} >
             <Tabs onChange={this.props.handleChange} value={this.props.slideIndex} tabItemContainerStyle={artBackBlack} inkBarStyle={{ backgroundColor: '#ffc81c' }}>
-              <Tab label='Tamplarie PVC' value={2} style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing, color: artTextWhite.color, textTransform: 'none'}} />
-              <Tab label='Accesorii' value={3} style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing, color: artTextWhite.color, textTransform: 'none'}} />
-              <Tab label='Compartimentari' value={4} style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing, color: artTextWhite.color, textTransform: 'none'}} />
-              <Tab label='Pereti Cortina' value={5} style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing, color: artTextWhite.color, textTransform: 'none'}} />
+              <Tab label={menu["1"]} value={2} style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing, color: artTextWhite.color, textTransform: 'none'}} />
+              <Tab label={menu["2"]} value={3} style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing, color: artTextWhite.color, textTransform: 'none'}} />
+              <Tab label={menu["3"]} value={4} style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing, color: artTextWhite.color, textTransform: 'none'}} />
+              <Tab label={menu["4"]} value={5} style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing, color: artTextWhite.color, textTransform: 'none'}} />
             </Tabs>
           </Col>
         </Row>

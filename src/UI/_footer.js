@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Layout, Icon } from 'antd'
+import { social, footer } from '../Components/constructor/_const' 
 const { Footer } = Layout
 
 const style = {
@@ -15,18 +16,18 @@ class Foot extends Component {
     return (
       <div>
         <Footer style={style}>
-          <a style={{color: '#fff'}} href='https://www.facebook.com/pg/cndwindows/services/' target='_blank' rel='noopener noreferrer'>
+          <a style={{color: '#fff'}} href={social.facebook} target='_blank' rel='noopener noreferrer'>
             <Icon type='facebook' style={{ fontSize: 40, padding: '5px' }} />
           </a>
-          <a style={{color: '#fff'}} href='https://www.instagram.com/' target='_blank' rel='noopener noreferrer'>
+          <a style={{color: '#fff'}} href={social.instagram} target='_blank' rel='noopener noreferrer'>
             <Icon type='instagram' style={{ fontSize: 40, padding: '5px' }} />
           </a>
-          <a style={{color: '#fff'}} href='https://www.youtube.com/' target='_blank' rel='noopener noreferrer'>
+          <a style={{color: '#fff'}} href={social.youtube} target='_blank' rel='noopener noreferrer'>
             <Icon type='youtube' style={{ fontSize: 40, padding: '5px' }} />
           </a>
         </Footer>
         <Footer style={style}>
-        CND Windows ©2018 Toate drepturile rezervate
+        {footer.trademark}
         </Footer>
       </div>
     )

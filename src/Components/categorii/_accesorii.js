@@ -4,6 +4,7 @@ import { Col, Row } from 'react-bootstrap'
 import Plase from './_plase'
 import Glafuri from './_rulouri'
 import SwipeableViews from 'react-swipeable-views'
+import { menu } from '../constructor/_const'
 
 const style2 = {
   borderBottom: '1px solid #000',
@@ -19,15 +20,15 @@ class Accesorii extends Component {
   constructor () {
     super()
     this.state = {
-      slideIndex: 0,
-      animateHeight: false
+      slideIndex: 0
     }
     this.onClick = this.handleChange.bind(this)
   }
 
     handleChange = (value) => {
       this.setState({
-        slideIndex: value
+        slideIndex: value,
+        animate: false
       })
     }
 
@@ -61,14 +62,14 @@ class Accesorii extends Component {
           <Row type='flex' style={style}>
             <Col style={style2} sm={12} md={12} lg={12} >
               <Tabs onChange={this.handleChange} value={this.state.slideIndex} tabItemContainerStyle={style} inkBarStyle={{ backgroundColor: '#ffc81c' }}>
-                <Tab label='Plase insecte / Glafuri' value={0} style={stil} />
-                <Tab label='Rulouri / Usi de garaj' value={1} style={stil} />
+                <Tab label={menu["5"]} value={0} style={stil} />
+                <Tab label={menu["6"]} value={1} style={stil} />
               </Tabs>
             </Col>
           </Row>
-          <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={style} animateHeight={this.state.animateHeight}>
-            <Plase SM={this.props.SM} loaded={() => { this.setState({animateHeight: true}) }}/>
-            <Glafuri SM={this.props.SM} loaded={() => { this.setState({animateHeight: true}) }}/>
+          <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={style} animateHeight={this.state.animate}>
+            <Plase SM={this.props.SM} loaded={() => { this.setState({animate: true}) }}/>
+            <Glafuri SM={this.props.SM}/>
           </SwipeableViews>
         </div>
       )

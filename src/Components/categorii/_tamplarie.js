@@ -1,18 +1,13 @@
 import React, { Component } from 'react'
 import { Col, Row } from 'antd'
 import { CardMedia } from 'material-ui/Card'
-import {
-  Step,
-  Stepper,
-  StepLabel,
-  StepContent,
-  StepButton
-} from 'material-ui/Stepper'
+import { Step, Stepper, StepLabel, StepContent, StepButton } from 'material-ui/Stepper'
 import IconProfile from 'material-ui/svg-icons/action/view-quilt'
 import IconCulori from 'material-ui/svg-icons/action/opacity'
 import IconSticla from 'material-ui/svg-icons/action/settings-brightness'
 import IconChecked from 'material-ui/svg-icons/action/done'
 import IconArrowUp from 'material-ui/svg-icons/action/change-history'
+import { profilcolor } from '../constructor/_const'
 
 const styleColor = {
   margin: 2,
@@ -159,49 +154,49 @@ class Tamplarie extends Component {
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Falb-antracit.png?alt=media&token=470f2483-bd0a-4e78-a06b-73c6ca00a90d' alt='Termopan Alb Antracit' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Alb - Antracit</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.albantracit}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Falb.PNG?alt=media&token=291acfd7-43cc-4232-9e98-07378fac0496' alt='Termopan Alb' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Alb</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.alb}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fantracit.PNG?alt=media&token=012fcab1-9e67-42d5-9070-c3d867f0aa77' alt='Termopan Antracit' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Antracit</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.antracit}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fgolden-oak.PNG?alt=media&token=c06941d2-4a2b-4f31-b337-8b65cc4e20db' alt='Termopan Golden Oak' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Golden Oak</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.oak}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fmahagoni.PNG?alt=media&token=8fa2dd33-4ac8-4071-b3a6-2f1517b16470' alt='' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Mahagoni</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.maha}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fmooreiche.PNG?alt=media&token=4627e065-1022-4edd-8ec6-28723b77e078' alt='' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Mooreiche</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.more}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fnusbaum.PNG?alt=media&token=7cd42875-d357-4d11-b988-3464ce439b7d' alt='' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Nusbaum</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.nusba}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Ftiama.PNG?alt=media&token=e0e801ff-1193-4b1f-ae1b-feb8dd1c0087' alt='' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>Tiama</div>
+                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.tiama}</div>
                     </CardMedia>
                   </Col>
                 </Row>
@@ -237,7 +232,7 @@ class Tamplarie extends Component {
                         <IconChecked style={{ height: this.state.iconSize }} />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>...</div>
+                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Se poate introduce gaz rar precum Argon-ul</div>
                       </Col>
                     </Row>
                     <Row>
@@ -245,23 +240,7 @@ class Tamplarie extends Component {
                         <IconChecked style={{ height: this.state.iconSize }} />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>...</div>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
-                      </Col>
-                      <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>...</div>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
-                      </Col>
-                      <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>...</div>
+                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Venim in sprijinul dumneavoastra,va oferim informatii despre diverse combinatii de geam tripan si proprietatile acestora.</div>
                       </Col>
                     </Row>
                   </Col>

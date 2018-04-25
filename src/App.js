@@ -22,13 +22,15 @@ import { Layout, Row, Col as ColAntd } from 'antd'
 // UI
 import Head from './UI/_header.js'
 import Foot from './UI/_footer.js'
-// Categorys
+// Categories
 import Acasa from './Components/categorii/_acasa.js'
 import Portofoliu from './Components/categorii/_portofoliu.js'
 import Tamplarie from './Components/categorii/_tamplarie.js'
 import Compartimentari from './Components/categorii/_compartimentari.js'
 import Cortine from './Components/categorii/_cortine.js'
 import Accesorii from './Components/categorii/_accesorii.js'
+// Const
+import { toast, btn } from './Components/constructor/_const.js'
 
 // Firebase
 import firebase from 'firebase'
@@ -63,13 +65,6 @@ var blackBorder = {
   borderColor: '#fff'
 }
 
-var btnStyle = {
-  color: '#333',
-  textTransform: 'none',
-  fontSize: '20px',
-  fontWeight: 'bold'
-}
-
 var centerText = {
   textAlign: 'center'
 }
@@ -100,25 +95,9 @@ class App extends Component {
     this.onClick = this.handleChange.bind(this)
   }
 
-  // componentWillMount () {
-  // if (!firebase.apps.length) {
-  //   firebase.initializeApp(config)
-  // }
-
-  // firebase.auth().onAuthStateChanged((user) => {
-  //   if (user) {
-  //     this.setState({ ...this, logged: true })
-  //   } else {
-  //     this.setState({ ...this, logged: false })
-  //   }
-  // })
-  // }
-
   componentWillMount () {
-    let width = window.innerWidth
-    if (width < 900) {
+    if (this.props.SM) {
       this.setState({
-        SM: true,
         fontSize: '12px',
         letterSpacing: '0px',
         fontWeight: 'normal',
@@ -126,7 +105,6 @@ class App extends Component {
       })
     } else {
       this.setState({
-        SM: false,
         fontSize: '16px',
         letterSpacing: '2px',
         fontWeight: 'bold',
@@ -172,12 +150,12 @@ class App extends Component {
         telefon: null,
         mesaj: null,
         msg: false,
-        toastmsg: 'Mesajul a fost Trimis!',
+        toastmsg: toast.sent,
         toast: true
       })
     } else {
       this.setState({
-        toastmsg: 'Va rugam sa completati toate campurile !',
+        toastmsg: toast.warning,
         toast: true
       })
     }
@@ -219,33 +197,33 @@ class App extends Component {
       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
         <Paper zDepth={5} rounded={false} style={style}>
           <Layout>
-            <Head SM={this.state.SM} handleChange={this.handleChange} slideIndex={this.state.slideIndex} />
+            <Head SM={this.props.SM} handleChange={this.handleChange} slideIndex={this.state.slideIndex} />
             <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={darkStyle} animateHeight={this.state.animate}>
-              <Acasa SM={this.state.SM} loaded={() => { this.setState({animate: true}) }} />
+              <Acasa SM={this.props.SM} loaded={() => { this.setState({animate: true}) }} />
               <Portofoliu />
-              <Tamplarie SM={this.state.SM} />
-              <Accesorii SM={this.state.SM} />
-              <Compartimentari SM={this.state.SM} />
-              <Cortine SM={this.state.SM} />
+              <Tamplarie SM={this.props.SM} />
+              <Accesorii SM={this.props.SM} />
+              <Compartimentari SM={this.props.SM} />
+              <Cortine SM={this.props.SM} />
             </SwipeableViews>
           </Layout>
-          <FlatButton fullWidth onClick={() => this.handleOpen()} label='Contacteaza-ne!' style={{ backgroundColor: yellowColor.color }} labelStyle={btnStyle} />
+          <FlatButton fullWidth onClick={() => this.handleOpen()} label={btn.contact} style={{ backgroundColor: yellowColor.color }} labelStyle={{color: '#222', textTransform: 'none', fontSize: this.state.fontSize, fontWeight: 'bold'}} />
           <Foot />
           <Dialog modal={false} open={this.state.open} onRequestClose={this.handleClose} >
             <Row gutter={8} type='flex' justify='space-around'>
               <ColAntd span={8} style={centerText} onClick={() => this.select(0)}>
-                <a href='tel:0740-598-662'>
+                <a href={'tel:' + btn.phone}>
                   <IconCall style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /></a><br />
-                <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Contacteaza Telefonic</div>
+                <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>{btn.phonetext}</div>
               </ColAntd>
               <ColAntd span={8} style={centerText} onClick={() => this.select(1)}>
-                <a href='mailto:cndwindows.ro@gmail.com'>
+                <a href={'mailto:' + btn.mail}>
                   <IconMail style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /></a><br />
-                <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Trimite un Mail</div>
+                <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>{btn.mailtext}</div>
               </ColAntd>
               <ColAntd span={8} style={centerText} onClick={() => this.select(2)}>
                 <IconChat style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /><br />
-                <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>Lasa un Mesaj</div>
+                <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>{btn.msgtext}</div>
               </ColAntd>
             </Row>
           </Dialog>
@@ -253,7 +231,7 @@ class App extends Component {
             <Row>
               <ColAntd>
                 <Row>
-                  <div style={{textAlign: 'center', color: '#fff', fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}}> Intra in Contact!</div>
+                  <div style={{textAlign: 'center', color: '#fff', fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}}>{toast.title}</div>
                   <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, color: '#fff', fontSize: this.state.fontSize }} floatingLabelText='Nume' onChange={(nume) => {
                     this.setState({ ...this, nume: nume.target.value })
                   }} />
@@ -266,11 +244,11 @@ class App extends Component {
                     this.setState({ ...this, telefon: telefon.target.value })
                   }} />
                   <br />
-                  <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, fontSize: this.state.fontSize }} floatingLabelText='Mesaj' multiLine rows={4} rowsMax={10} onChange={(mesaj) => {
+                  <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, fontSize: this.state.fontSize }} floatingLabelText='Mesaj' multiLine rows={4} rowsMax={50} onChange={(mesaj) => {
                     this.setState({ ...this, mesaj: mesaj.target.value })
                   }} />
                   <br /><br />
-                  <FlatButton onClick={() => this.handleSubmit()} fullWidth label='Trimite Mesaj' style={{ backgroundColor: '#ffc81c' }} labelStyle={{ color: '#333', textTransform: 'none', fontSize: this.state.fontSize, fontWeight: this.state.fontWeight }} />
+                  <FlatButton onClick={() => this.handleSubmit()} fullWidth label={toast.msg} style={{ backgroundColor: '#ffc81c' }} labelStyle={{ color: '#333', textTransform: 'none', fontSize: this.state.fontSize, fontWeight: 'bold' }} />
                 </Row>
               </ColAntd>
             </Row>
@@ -280,7 +258,7 @@ class App extends Component {
             bodyStyle={darkStyle}
             open={this.state.toast}
             message={this.state.toastmsg}
-            autoHideDuration={4000}
+            autoHideDuration={toast.timer}
             onRequestClose={this.handleCloseToast} />
         </Paper>
       </MuiThemeProvider>

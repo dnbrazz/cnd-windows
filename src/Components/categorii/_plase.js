@@ -2,13 +2,7 @@ import React, { Component } from 'react'
 import { Col, Row } from 'antd'
 import { CardMedia } from 'material-ui/Card'
 import IconChecked from 'material-ui/svg-icons/action/done'
-import {
-  Step,
-  Stepper,
-  StepLabel,
-  StepContent,
-  StepButton
-} from 'material-ui/Stepper'
+import { Step, Stepper, StepLabel, StepContent, StepButton } from 'material-ui/Stepper'
 import IconProfile from 'material-ui/svg-icons/editor/border-all'
 import IconCulori from 'material-ui/svg-icons/action/swap-vert'
 import IconArrowUp from 'material-ui/svg-icons/action/change-history'
@@ -197,7 +191,7 @@ class Plase extends Component {
                     <IconChecked style={{ height: this.state.iconSize }} />
                   </Col>
                   <Col xs={21} sm={21} md={22} lg={22}>
-                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>Usor de curatat si intretinut, doar cu o carpa umeda, fara materiale abrazive</div>
                   </Col>
                 </Row>
                 <Row>
@@ -205,7 +199,7 @@ class Plase extends Component {
                     <IconChecked style={{ height: this.state.iconSize }} />
                   </Col>
                   <Col xs={21} sm={21} md={22} lg={22}>
-                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>Rezistent la zgarieturi</div>
                   </Col>
                 </Row>
                 <Row>
@@ -213,7 +207,7 @@ class Plase extends Component {
                     <IconChecked style={{ height: this.state.iconSize }} />
                   </Col>
                   <Col xs={21} sm={21} md={22} lg={22}>
-                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>Rezistente la umiditate</div>
                   </Col>
                 </Row>
                 <Row>
@@ -221,7 +215,7 @@ class Plase extends Component {
                     <IconChecked style={{ height: this.state.iconSize }} />
                   </Col>
                   <Col xs={21} sm={21} md={22} lg={22}>
-                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>Nu flambeaza</div>
                   </Col>
                 </Row>
                 <Row>
@@ -229,7 +223,7 @@ class Plase extends Component {
                     <IconChecked style={{ height: this.state.iconSize }} />
                   </Col>
                   <Col xs={21} sm={21} md={22} lg={22}>
-                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>Rezistente la utilizare intensiva</div>
                   </Col>
                 </Row>
                 <Row>
@@ -237,7 +231,7 @@ class Plase extends Component {
                     <IconChecked style={{ height: this.state.iconSize }} />
                   </Col>
                   <Col xs={21} sm={21} md={22} lg={22}>
-                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>Sunt durabile in timp</div>
                   </Col>
                 </Row>
                 <Row>
@@ -245,7 +239,7 @@ class Plase extends Component {
                     <IconChecked style={{ height: this.state.iconSize }} />
                   </Col>
                   <Col xs={21} sm={21} md={22} lg={22}>
-                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>...</div>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>100% reciclabile</div>
                   </Col>
                 </Row>
               </Col>
