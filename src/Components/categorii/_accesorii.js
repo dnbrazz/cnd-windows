@@ -20,15 +20,15 @@ class Accesorii extends Component {
   constructor () {
     super()
     this.state = {
-      slideIndex: 0
+      slideIndex: 0,
+      animate: false
     }
     this.onClick = this.handleChange.bind(this)
   }
 
     handleChange = (value) => {
       this.setState({
-        slideIndex: value,
-        animate: false
+        slideIndex: value
       })
     }
 
@@ -62,14 +62,14 @@ class Accesorii extends Component {
           <Row type='flex' style={style}>
             <Col style={style2} sm={12} md={12} lg={12} >
               <Tabs onChange={this.handleChange} value={this.state.slideIndex} tabItemContainerStyle={style} inkBarStyle={{ backgroundColor: '#ffc81c' }}>
-                <Tab label={menu["5"]} value={0} style={stil} />
-                <Tab label={menu["6"]} value={1} style={stil} />
+                <Tab label={menu['5']} value={0} style={stil} />
+                <Tab label={menu['6']} value={1} style={stil} />
               </Tabs>
             </Col>
           </Row>
           <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange} style={style} animateHeight={this.state.animate}>
-            <Plase SM={this.props.SM} loaded={() => { this.setState({animate: true}) }}/>
-            <Glafuri SM={this.props.SM}/>
+            <Plase SM={this.props.SM} loaded={() => { this.setState({animate: true}) }} />
+            <Glafuri SM={this.props.SM} />
           </SwipeableViews>
         </div>
       )

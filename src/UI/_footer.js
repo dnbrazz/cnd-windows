@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Layout, Icon } from 'antd'
-import { social, footer } from '../Components/constructor/_const' 
+import { social, footer } from '../Components/constructor/_const'
 const { Footer } = Layout
 
 const style = {
@@ -27,7 +27,7 @@ class Foot extends Component {
           </a>
         </Footer>
         <Footer style={style}>
-        {footer.trademark}
+          {footer.trademark}
         </Footer>
       </div>
     )

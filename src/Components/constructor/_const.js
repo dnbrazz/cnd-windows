@@ -24,22 +24,14 @@ export const artTextBlack = {
   color: '#222'
 }
 
-export const toast = {
-  title: 'Intra in Contact !',
-  warning: 'Va rugam sa completati toate campurile !',
-  sent: 'Mesajul a fost Trimis !',
-  msg: 'Trimite Mesaj',
-  timer: 4000
-}
+// DATA
 
-export const header = {
+export const contact = {
+  phone: '0740-598-662',
   carrier: 'Orange',
+  mail: 'cndwindows.ro@gmail.com',
   openfrom: '07:00',
   opento: '16:00'
-}
-
-export const footer = {
-  trademark: 'CND Windows ©2018 Toate drepturile rezervate'
 }
 
 export const menu = {
@@ -49,8 +41,8 @@ export const menu = {
   3: 'Compartimentari',
   4: 'Pereti Cortina',
   // Accesorii
-  5: 'Plase insecte / Glafuri',
-  6: 'Rulouri / Usi de garaj'
+  5: 'Plase insecte',
+  6: 'Rulouri / Glafuri'
 }
 
 export const profilcolor = {
@@ -65,18 +57,31 @@ export const profilcolor = {
 }
 
 export const btn = {
-  contact: 'Contacteaza-ne !',
+  // Dialog Button Icons
   phonetext: 'Contacteaza Telefonic',
-  // eslint-disable-next-line
-  phone: '0740-598-662',
   mailtext: 'Trimite un Mail',
-  // eslint-disable-next-line
-  mail: 'cndwindows.ro@gmail.com',
-  msgtext: 'Lasa un Mesaj'
+  msgtext: 'Lasa un Mesaj',
+  // Yellow Buttons
+  msg: 'Trimite Mesaj',
+  contact: 'Contacteaza-ne !'
+}
+
+export const msgTitle = {
+  title: 'Intra in Contact !'
+}
+
+export const toast = {
+  warning: 'Va rugam sa completati toate campurile !',
+  sent: 'Mesajul a fost Trimis !',
+  timer: 4000
 }
 
 export const social = {
   facebook: 'https://www.facebook.com/pg/cndwindows/services/',
   instagram: 'https://www.instagram.com/',
   youtube: 'https://www.youtube.com/'
+}
+
+export const footer = {
+  trademark: 'CND Windows ©2018 Toate drepturile rezervate'
 }

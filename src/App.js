@@ -30,7 +30,7 @@ import Compartimentari from './Components/categorii/_compartimentari.js'
 import Cortine from './Components/categorii/_cortine.js'
 import Accesorii from './Components/categorii/_accesorii.js'
 // Const
-import { toast, btn } from './Components/constructor/_const.js'
+import { toast, btn, msgTitle, contact } from './Components/constructor/_const.js'
 
 // Firebase
 import firebase from 'firebase'
@@ -212,12 +212,12 @@ class App extends Component {
           <Dialog modal={false} open={this.state.open} onRequestClose={this.handleClose} >
             <Row gutter={8} type='flex' justify='space-around'>
               <ColAntd span={8} style={centerText} onClick={() => this.select(0)}>
-                <a href={'tel:' + btn.phone}>
+                <a href={'tel:' + contact.phone}>
                   <IconCall style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /></a><br />
                 <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>{btn.phonetext}</div>
               </ColAntd>
               <ColAntd span={8} style={centerText} onClick={() => this.select(1)}>
-                <a href={'mailto:' + btn.mail}>
+                <a href={'mailto:' + contact.mail}>
                   <IconMail style={{height: this.state.iconHeight, width: '100%', cursor: 'pointer'}} hoverColor={yellowColor.color} /></a><br />
                 <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, color: this.state.color}}>{btn.mailtext}</div>
               </ColAntd>
@@ -231,7 +231,7 @@ class App extends Component {
             <Row>
               <ColAntd>
                 <Row>
-                  <div style={{textAlign: 'center', color: '#fff', fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}}>{toast.title}</div>
+                  <div style={{textAlign: 'center', color: '#fff', fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}}>{msgTitle.title}</div>
                   <TextField fullWidth floatingLabelFocusStyle={yellowColor} underlineFocusStyle={yellowUnder} underlineStyle={blackBorder} style={{ padding: 10, color: '#fff', fontSize: this.state.fontSize }} floatingLabelText='Nume' onChange={(nume) => {
                     this.setState({ ...this, nume: nume.target.value })
                   }} />
@@ -248,7 +248,7 @@ class App extends Component {
                     this.setState({ ...this, mesaj: mesaj.target.value })
                   }} />
                   <br /><br />
-                  <FlatButton onClick={() => this.handleSubmit()} fullWidth label={toast.msg} style={{ backgroundColor: '#ffc81c' }} labelStyle={{ color: '#333', textTransform: 'none', fontSize: this.state.fontSize, fontWeight: 'bold' }} />
+                  <FlatButton onClick={() => this.handleSubmit()} fullWidth label={btn.msg} style={{ backgroundColor: '#ffc81c' }} labelStyle={{ color: '#333', textTransform: 'none', fontSize: this.state.fontSize, fontWeight: 'bold' }} />
                 </Row>
               </ColAntd>
             </Row>

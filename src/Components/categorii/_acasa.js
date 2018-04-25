@@ -71,7 +71,7 @@ class Acasa extends Component {
         <Row gutter={8}>
           <Col xs={24} sm={24} md={8} lg={8} >
             <Card>
-              <CardMedia overlay={<CardTitle title='Proiectari Ferestre' titleStyle={{fontSize: this.state.fontSizeTitle, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} />}>
+              <CardMedia overlay={<CardTitle title='Tamplarie PVC & Aluminiu' titleStyle={{fontSize: this.state.fontSizeTitle, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} />}>
                 <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Fproiectare_ferestre_lg.png?alt=media&token=1479fd0e-9f63-4ae2-b946-cb98ae3c8d0e' alt='Termopane PVC Salamander Oferta' onLoad={this.props.loaded} />
               </CardMedia>
               <CardText style={{fontSize: this.state.fontSize}}>

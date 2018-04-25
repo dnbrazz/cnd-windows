@@ -10,6 +10,7 @@ import { Col, Row } from 'antd'
 import IconProfile from 'material-ui/svg-icons/editor/border-all'
 import IconArrowUp from 'material-ui/svg-icons/action/change-history'
 import IconChecked from 'material-ui/svg-icons/action/done'
+import IconCulori from 'material-ui/svg-icons/action/swap-vert'
 import { CardMedia } from 'material-ui/Card'
 
 const styleColor = {
@@ -101,7 +102,81 @@ class Glafuri extends Component {
               </Col>
               <Col xs={24} sm={24} md={8} lg={8} style={{ padding: 24 }}>
                 <CardMedia style={styleColor}>
-                  <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Frulouri%2Fusa_rulou_sectiune.png?alt=media&token=954f9f6c-9acf-4a68-b939-27b1b59a25e8' alt='Termopan Rulouri' />
+                  <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Frulouri%2Frulou-pvc.png?alt=media&token=1761b01d-7047-4d8e-acfb-dc2eb61d78ba' alt='Termopan Rulouri' />
+                </CardMedia>
+              </Col>
+            </Row>
+          </StepContent>
+        </Step>
+        <Step active>
+          <StepLabel icon={<IconCulori />}>
+            <StepButton>
+              <div style={{ textAlign: 'center', color: '#fff', fontSize: this.state.fontSizeStep, fontWeight: 'bold', letterSpacing: this.state.letterSpacing, padding: 20 }}> Glafuri Interioare / Exterioare</div>
+            </StepButton>
+          </StepLabel>
+          <StepContent>
+            <Row type='flex' justify='space-around' align='middle'>
+              <Col xs={24} sm={24} md={13} lg={13} style={{ paddingTop: 50 }}>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>Usor de curatat si intretinut, doar cu o carpa umeda, fara materiale abrazive</div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>Rezistent la zgarieturi</div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>Rezistente la umiditate</div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>Nu flambeaza</div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>Rezistente la utilizare intensiva</div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>Sunt durabile in timp</div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={3} sm={3} md={2} lg={2}>
+                    <IconChecked style={{ height: this.state.iconSize }} />
+                  </Col>
+                  <Col xs={21} sm={21} md={22} lg={22}>
+                    <div style={{ fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing }}>100% reciclabile</div>
+                  </Col>
+                </Row>
+              </Col>
+              <Col xs={24} sm={24} md={11} lg={11} style={{ paddingTop: this.state.fontSizeStep, paddingBottom: this.state.iconSize }}>
+                <CardMedia style={styleColor}>
+                  <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Frulouri%2Fglaf-interior-exterior.png?alt=media&token=9b09266d-adf2-463a-b3b2-9c085d57c459' alt='Glafuri PVC interior exterior' />
                 </CardMedia>
               </Col>
             </Row>
