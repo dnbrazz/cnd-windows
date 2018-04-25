@@ -3,6 +3,7 @@ import { Col, Carousel, Row } from 'antd'
 import { Card, CardMedia, CardTitle, CardText } from 'material-ui/Card'
 import IconChecked from 'material-ui/svg-icons/action/done'
 import IconInfo from 'material-ui/svg-icons/action/info'
+import { homeServImg } from '../constructor/_const'
 
 const darkStyle = {
   backgroundColor: '#333'
@@ -72,7 +73,7 @@ class Acasa extends Component {
           <Col xs={24} sm={24} md={8} lg={8} >
             <Card>
               <CardMedia overlay={<CardTitle title='Tamplarie PVC & Aluminiu' titleStyle={{fontSize: this.state.fontSizeTitle, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} />}>
-                <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Fproiectare_ferestre_lg.png?alt=media&token=1479fd0e-9f63-4ae2-b946-cb98ae3c8d0e' alt='Termopane PVC Salamander Oferta' onLoad={this.props.loaded} />
+                <img src={homeServImg.tamplarieImg} alt='Termopane PVC Salamander Oferta' onLoad={this.props.loaded} />
               </CardMedia>
               <CardText style={{fontSize: this.state.fontSize}}>
                 <IconChecked style={{height: this.state.iconSize}} /> Pentru ca acordam o atentie deosebita etapei de proiectare, ofertele noastre vin insotite de un proiect vizual care listeaza caracteristicile tehnice, functionale si de design ale produsului comandat.<br />
@@ -83,7 +84,7 @@ class Acasa extends Component {
           <Col xs={24} sm={24} md={8} lg={8} >
             <Card>
               <CardMedia overlay={<CardTitle title='Transport si Montaj' titleStyle={{fontSize: this.state.fontSizeTitle, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} />}>
-                <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Ftransport_instalare_500x300_lg.jpg?alt=media&token=631e6588-fb49-4042-8624-e2c8eb3b081a' alt='Transport si Montaj Termopane PVC Aluminiu' />
+                <img src={homeServImg.montajImg} alt='Transport si Montaj Termopane PVC Aluminiu' />
               </CardMedia>
               <CardText style={{fontSize: this.state.fontSize}}>
                 <IconChecked style={{height: this.state.iconSize}} /> Transportul comenzilor este realizat cu autoutilitare echipate cu stative speciale pentru a nu deteriora tamplaria sau geamurile.<br />
@@ -94,7 +95,7 @@ class Acasa extends Component {
           <Col xs={24} sm={24} md={8} lg={8} >
             <Card>
               <CardMedia overlay={<CardTitle title='Oferte Dealeri' titleStyle={{fontSize: this.state.fontSizeTitle, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} />}>
-                <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Foferte_dealeri_500x300_lg.jpg?alt=media&token=9a2195e6-508a-4563-b7a4-f2ea6e504d89' alt='Oferte pentru dealeri Tamplarie PVC Termopan' />
+                <img src={homeServImg.dealeriImg} alt='Oferte pentru dealeri Tamplarie PVC Termopan' />
               </CardMedia>
               <CardText style={{fontSize: this.state.fontSize}}>
                 <IconChecked style={{height: this.state.iconSize}} /> Oferim partenerilor nostri preturi de producator.<br />

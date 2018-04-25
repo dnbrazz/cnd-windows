@@ -176,7 +176,7 @@ class Glafuri extends Component {
               </Col>
               <Col xs={24} sm={24} md={11} lg={11} style={{ paddingTop: this.state.fontSizeStep, paddingBottom: this.state.iconSize }}>
                 <CardMedia style={styleColor}>
-                  <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Frulouri%2Fglaf-interior-exterior.png?alt=media&token=9b09266d-adf2-463a-b3b2-9c085d57c459' alt='Glafuri PVC interior exterior' />
+                  <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Frulouri%2Frulou-pvc.png?alt=media&token=eccffe87-047d-40a5-97c8-4fb3fd6c5fc1' alt='Glafuri PVC interior exterior' />
                 </CardMedia>
               </Col>
             </Row>

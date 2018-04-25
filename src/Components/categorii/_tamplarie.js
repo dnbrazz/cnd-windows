@@ -7,7 +7,7 @@ import IconCulori from 'material-ui/svg-icons/action/opacity'
 import IconSticla from 'material-ui/svg-icons/action/settings-brightness'
 import IconChecked from 'material-ui/svg-icons/action/done'
 import IconArrowUp from 'material-ui/svg-icons/action/change-history'
-import { profilcolor } from '../constructor/_const'
+import { profilcolor, profilImg } from '../constructor/_const'
 
 const styleColor = {
   margin: 2,
@@ -153,49 +153,49 @@ class Tamplarie extends Component {
                 <Row gutter={4} style={{ paddingTop: this.state.iconSize, paddingBottom: this.state.iconSize }}>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
-                      <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Falb-antracit.png?alt=media&token=470f2483-bd0a-4e78-a06b-73c6ca00a90d' alt='Termopan Alb Antracit' />
+                      <img src={profilImg.albantracit} alt='Termopan Alb Antracit' />
                       <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.albantracit}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
-                      <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Falb.PNG?alt=media&token=291acfd7-43cc-4232-9e98-07378fac0496' alt='Termopan Alb' />
+                      <img src={profilImg.alb} alt='Termopan Alb' />
                       <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.alb}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
-                      <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fantracit.PNG?alt=media&token=012fcab1-9e67-42d5-9070-c3d867f0aa77' alt='Termopan Antracit' />
+                      <img src={profilImg.antracit} alt='Termopan Antracit' />
                       <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.antracit}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
-                      <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fgolden-oak.PNG?alt=media&token=c06941d2-4a2b-4f31-b337-8b65cc4e20db' alt='Termopan Golden Oak' />
+                      <img src={profilImg.oak} alt='Termopan Golden Oak' />
                       <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.oak}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
-                      <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fmahagoni.PNG?alt=media&token=8fa2dd33-4ac8-4071-b3a6-2f1517b16470' alt='' />
+                      <img src={profilImg.maha} alt='Termopan Mahon' />
                       <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.maha}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
-                      <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fmooreiche.PNG?alt=media&token=4627e065-1022-4edd-8ec6-28723b77e078' alt='' />
+                      <img src={profilImg.more} alt='Termpoan Mooreiche' />
                       <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.more}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
-                      <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Fnusbaum.PNG?alt=media&token=7cd42875-d357-4d11-b988-3464ce439b7d' alt='' />
+                      <img src={profilImg.nusba} alt='Termopan Nuc' />
                       <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.nusba}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
-                      <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Ftiama.PNG?alt=media&token=e0e801ff-1193-4b1f-ae1b-feb8dd1c0087' alt='' />
+                      <img src={profilImg.tiama} alt='Termopan Tiama' />
                       <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.tiama}</div>
                     </CardMedia>
                   </Col>
@@ -246,7 +246,7 @@ class Tamplarie extends Component {
                   </Col>
                   <Col xs={{ span: 18, offset: 4 }} sm={{ span: 18, offset: 4 }} md={{ span: 18, offset: 4 }} lg={{ span: 8, offset: 0 }} style={{ padding: 20 }}>
                     <CardMedia style={{ padding: 10 }}>
-                      <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FSticla%2Fdouble-pane-and-triple-pane-glass.png?alt=media&token=f1b70796-1a81-40f5-892d-6c19f6b2bde4' alt='Termopane PVC Salamander Oferta' />
+                      <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FSticla%2Fgeam%20termopan%20tripan.png?alt=media&token=810a9694-6842-45c0-83b3-cfd5c88ff980' alt='Termopane PVC Salamander Oferta' />
                     </CardMedia>
                   </Col>
                 </Row>
