@@ -15,10 +15,6 @@ class Portofoliu extends Component {
     }
   }
 
-  componentWillReceiveProps () {
-
-  }
-
   componentDidMount () {
     this.firebaseRef = firebase.database().ref('Portofoliu').orderByPriority()
     this.firebaseCallback = this.firebaseRef.on('child_added', snapshot => {
