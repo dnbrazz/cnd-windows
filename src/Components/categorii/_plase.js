@@ -6,6 +6,7 @@ import { Step, Stepper, StepLabel, StepContent, StepButton } from 'material-ui/S
 import IconProfile from 'material-ui/svg-icons/editor/border-all'
 import IconCulori from 'material-ui/svg-icons/action/swap-vert'
 import IconArrowUp from 'material-ui/svg-icons/action/change-history'
+import { accesorii } from '../constructor/_const'
 
 const styleColor = {
   padding: 20,
@@ -97,7 +98,7 @@ class Plase extends Component {
               </Col>
               <Col xs={24} sm={24} md={8} lg={8} style={{ padding: 24 }}>
                 <CardMedia style={styleColor}>
-                  <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Fplase-insecte%2F66.jpg-1.png?alt=media&token=ef42396e-0c51-4298-b427-8d05f1c5a2a2' alt='Termopan Plase de Tantari' onLoad={this.props.loaded} />
+                  <img src={accesorii.plasaImg} alt='Termopan Plase de Tantari' onLoad={this.props.loaded} />
                 </CardMedia>
               </Col>
             </Row>
@@ -171,7 +172,7 @@ class Plase extends Component {
               </Col>
               <Col xs={24} sm={24} md={8} lg={8} style={{ paddingTop: this.state.iconSize, paddingBottom: this.state.iconSize }}>
                 <CardMedia style={styleColor}>
-                  <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Fplase-insecte%2Ffda22f_a1f918abf5734c73aeb2d98b1021f8ba.png?alt=media&token=d1a3a72f-8398-41d0-8f04-d4a0073d171c' alt='Termopan Plase Tantari Rulou' />
+                  <img src={accesorii.plasarulouImg} alt='Termopan Plase Tantari Rulou' />
                 </CardMedia>
               </Col>
             </Row>

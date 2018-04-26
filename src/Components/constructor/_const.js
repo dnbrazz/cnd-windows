@@ -6,14 +6,7 @@ export const configFirebase = {
   storageBucket: 'cndwindows-ro.appspot.com',
   messagingSenderId: '894816752251'
 }
-export const textLG = {
-  size: '15px',
-  spacing: '2px'
-}
-export const textSM = {
-  size: '12px',
-  spacing: '0px'
-}
+
 export const artBackBlack = {
   backgroundColor: '#222'
 }
@@ -72,6 +65,14 @@ export const homeServImg = {
   montajImg: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Ftransport_instalare_500x300_lg.jpg?alt=media&token=6025efe2-9148-4ac6-b131-773272465afa',
   dealeriImg: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Foferte_dealeri_500x300_lg.jpg?alt=media&token=02b46889-c208-40f4-a883-ef7f202f9a8c'
 }
+
+export const accesorii = {
+  plasaImg: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Fplase-insecte%2F66.jpg-1.png?alt=media&token=ef42396e-0c51-4298-b427-8d05f1c5a2a2',
+  plasarulouImg: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Fplase-insecte%2Ffda22f_a1f918abf5734c73aeb2d98b1021f8ba.png?alt=media&token=d1a3a72f-8398-41d0-8f04-d4a0073d171c',
+  rulouImg: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Frulouri%2Frulou-pvc.png?alt=media&token=eccffe87-047d-40a5-97c8-4fb3fd6c5fc1',
+  glafImg: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Frulouri%2Fglaf-interior-exterior.png?alt=media&token=9b09266d-adf2-463a-b3b2-9c085d57c459'
+}
+
 export const btn = {
   // Dialog Button Icons
   phonetext: 'Contacteaza Telefonic',

@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
-import {
-  Step,
-  Stepper,
-  StepLabel,
-  StepContent,
-  StepButton
-} from 'material-ui/Stepper'
+import { Step, Stepper, StepLabel, StepContent, StepButton } from 'material-ui/Stepper'
 import { Col, Row } from 'antd'
 import IconProfile from 'material-ui/svg-icons/editor/border-all'
 import IconArrowUp from 'material-ui/svg-icons/action/change-history'
 import IconChecked from 'material-ui/svg-icons/action/done'
 import IconCulori from 'material-ui/svg-icons/action/swap-vert'
 import { CardMedia } from 'material-ui/Card'
+import { accesorii } from '../constructor/_const'
 
 const styleColor = {
   padding: 20,
@@ -102,7 +97,7 @@ class Glafuri extends Component {
               </Col>
               <Col xs={24} sm={24} md={8} lg={8} style={{ padding: 24 }}>
                 <CardMedia style={styleColor}>
-                  <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Frulouri%2Frulou-pvc.png?alt=media&token=1761b01d-7047-4d8e-acfb-dc2eb61d78ba' alt='Termopan Rulouri' />
+                  <img src={accesorii.rulouImg} alt='Termopan Rulouri' />
                 </CardMedia>
               </Col>
             </Row>
@@ -176,7 +171,7 @@ class Glafuri extends Component {
               </Col>
               <Col xs={24} sm={24} md={11} lg={11} style={{ paddingTop: this.state.fontSizeStep, paddingBottom: this.state.iconSize }}>
                 <CardMedia style={styleColor}>
-                  <img src='https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Frulouri%2Frulou-pvc.png?alt=media&token=eccffe87-047d-40a5-97c8-4fb3fd6c5fc1' alt='Glafuri PVC interior exterior' />
+                  <img src={accesorii.glafImg} alt='Glafuri PVC interior exterior' />
                 </CardMedia>
               </Col>
             </Row>

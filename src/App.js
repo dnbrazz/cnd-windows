@@ -134,7 +134,7 @@ class App extends Component {
     this.setState({ toast: false })
   }
 
-  // Firebase Sent MSG
+  // Firebase Send MSG
   handleSubmit = () => {
     let dbCon = firebase.database().ref('/Mesaje')
     if (this.state.nume && this.state.email && this.state.telefon && this.state.mesaj) {
