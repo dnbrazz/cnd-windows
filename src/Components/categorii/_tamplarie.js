@@ -17,37 +17,6 @@ const styleColor = {
 }
 
 class Tamplarie extends Component {
-  constructor () {
-    super()
-    this.state = {
-      fontSize: '',
-      letterSpacing: '',
-      fontSizeStep: '',
-      iconSize: ''
-    }
-  }
-  componentWillReceiveProps () {
-  }
-
-  componentWillMount () {
-    if (this.props.SM) {
-      this.setState({
-        fontSize: '12px',
-        letterSpacing: '0px',
-        fontSizeStep: '18px',
-        iconSize: '15px',
-        fontWeight: 'normal'
-      })
-    } else {
-      this.setState({
-        fontSize: '15px',
-        letterSpacing: '2px',
-        fontSizeStep: '30px',
-        iconSize: '20px',
-        fontWeight: 'bold'
-      })
-    }
-  }
   render () {
     return (
       <div>
@@ -56,7 +25,7 @@ class Tamplarie extends Component {
             <Step active>
               <StepLabel icon={<IconProfile />}>
                 <StepButton>
-                  <div style={{ textAlign: 'center', color: '#fff', fontSize: this.state.fontSizeStep, fontWeight: 'bold', letterSpacing: this.state.letterSpacing, padding: this.state.iconSize }}>Salamander StreamLine 76</div>
+                  <div className='servicii_title'>Salamander StreamLine 76</div>
                 </StepButton>
               </StepLabel>
               <StepContent>
@@ -69,74 +38,74 @@ class Tamplarie extends Component {
                   <Col xs={24} sm={24} md={16} lg={16} style={{ paddingTop: 50 }}>
                     <Row>
                       <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
+                        <IconChecked />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Profil clasa A  cu grosimea peretelui exterior de 3mm</div>
+                        <div className='servicii_details'>Profil clasa A  cu grosimea peretelui exterior de 3mm</div>
                       </Col>
                     </Row>
                     <Row>
                       <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
+                        <IconChecked />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Adancimea constructiva a profilului: 76mm</div>
+                        <div className='servicii_details'>Adancimea constructiva a profilului: 76mm</div>
                       </Col>
                     </Row>
                     <Row>
                       <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
+                        <IconChecked />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Disponibil in varianta de 5 camere de izolare fonica si termica</div>
+                        <div className='servicii_details'>Disponibil in varianta de 5 camere de izolare fonica si termica</div>
                       </Col>
                     </Row>
                     <Row>
                       <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
+                        <IconChecked />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Izolare fonica 47 dB la zgomotul din exterior</div>
+                        <div className='servicii_details'>Izolare fonica 47 dB la zgomotul din exterior</div>
                       </Col>
                     </Row>
                     <Row>
                       <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
+                        <IconChecked />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Rezistenta la furt Clasa 2 (DIN  V ENV 1627)</div>
+                        <div className='servicii_details'>Rezistenta la furt Clasa 2 (DIN  V ENV 1627)</div>
                       </Col>
                     </Row>
                     <Row>
                       <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
+                        <IconChecked />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Geam termopan compatibil: 24mm (2 foi de sticla) si 40mm (3 foi de sticla)</div>
+                        <div className='servicii_details'>Geam termopan compatibil: 24mm (2 foi de sticla) si 40mm (3 foi de sticla)</div>
                       </Col>
                     </Row>
                     <Row>
                       <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
+                        <IconChecked />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Feronerie ROTO NT, cu blocatori antiefractie tip ciuperca si piesa de microventilatie</div>
+                        <div className='servicii_details'>Feronerie ROTO NT, cu blocatori antiefractie tip ciuperca si piesa de microventilatie</div>
                       </Col>
                     </Row>
                     <Row>
                       <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
+                        <IconChecked />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Armatura tratata din otel zincat minim de 1.5-2mm</div>
+                        <div className='servicii_details'>Armatura tratata din otel zincat minim de 1.5-2mm</div>
                       </Col>
                     </Row>
                     <Row>
                       <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
+                        <IconChecked />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Durata de viata estimata 50 ani</div>
+                        <div className='servicii_details'>Durata de viata estimata 50 ani</div>
                       </Col>
                     </Row>
                   </Col>
@@ -146,57 +115,57 @@ class Tamplarie extends Component {
             <Step active>
               <StepLabel icon={<IconCulori />}>
                 <StepButton>
-                  <div style={{ textAlign: 'center', color: '#fff', fontSize: this.state.fontSizeStep, fontWeight: 'bold', letterSpacing: this.state.letterSpacing, padding: this.state.iconSize }}> Culori</div>
+                  <div className='servicii_title'> Culori</div>
                 </StepButton>
               </StepLabel>
               <StepContent>
-                <Row gutter={4} style={{ paddingTop: this.state.iconSize, paddingBottom: this.state.iconSize }}>
+                <Row gutter={4} style={{ paddingTop: 20, paddingBottom: 20 }}>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src={profilImg.albantracit} alt='Termopan Alb Antracit' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.albantracit}</div>
+                      <div className='tamplarie_colors'>{profilcolor.albantracit}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src={profilImg.alb} alt='Termopan Alb' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.alb}</div>
+                      <div className='tamplarie_colors'>{profilcolor.alb}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src={profilImg.antracit} alt='Termopan Antracit' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.antracit}</div>
+                      <div className='tamplarie_colors'>{profilcolor.antracit}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src={profilImg.oak} alt='Termopan Golden Oak' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.oak}</div>
+                      <div className='tamplarie_colors'>{profilcolor.oak}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src={profilImg.maha} alt='Termopan Mahon' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.maha}</div>
+                      <div className='tamplarie_colors'>{profilcolor.maha}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src={profilImg.more} alt='Termpoan Mooreiche' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.more}</div>
+                      <div className='tamplarie_colors'>{profilcolor.more}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src={profilImg.nusba} alt='Termopan Nuc' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.nusba}</div>
+                      <div className='tamplarie_colors'>{profilcolor.nusba}</div>
                     </CardMedia>
                   </Col>
                   <Col xs={6} sm={6} md={3} lg={3}>
                     <CardMedia style={styleColor}>
                       <img src={profilImg.tiama} alt='Termopan Tiama' />
-                      <div style={{fontSize: this.state.fontSize, fontWeight: this.state.fontWeight, letterSpacing: this.state.letterSpacing}} className='overlay'>{profilcolor.tiama}</div>
+                      <div className='tamplarie_colors'>{profilcolor.tiama}</div>
                     </CardMedia>
                   </Col>
                 </Row>
@@ -205,7 +174,7 @@ class Tamplarie extends Component {
             <Step active>
               <StepLabel icon={<IconSticla />}>
                 <StepButton>
-                  <div style={{ textAlign: 'center', color: '#fff', fontSize: this.state.fontSizeStep, fontWeight: 'bold', letterSpacing: this.state.letterSpacing, padding: this.state.iconSize }}> Geam Termopan</div>
+                  <div className='servicii_title'> Geam Termopan</div>
                 </StepButton>
               </StepLabel>
               <StepContent>
@@ -213,34 +182,34 @@ class Tamplarie extends Component {
                   <Col xs={24} sm={24} md={24} lg={16} style={{ paddingTop: 50 }}>
                     <Row>
                       <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
+                        <IconChecked />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Gama variata de geamuri cu protectie marca Saint Gobain</div>
+                        <div className='servicii_details'>Gama variata de geamuri cu protectie marca Saint Gobain</div>
                       </Col>
                     </Row>
                     <Row>
                       <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
+                        <IconChecked />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Dispoinibil 24mm (2 foi de sticla) si 40mm (3 foi de sticla)</div>
+                        <div className='servicii_details'>Dispoinibil 24mm (2 foi de sticla) si 40mm (3 foi de sticla)</div>
                       </Col>
                     </Row>
                     <Row>
                       <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
+                        <IconChecked />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Se poate introduce gaz rar precum Argon-ul</div>
+                        <div className='servicii_details'>Se poate introduce gaz rar precum Argon-ul</div>
                       </Col>
                     </Row>
                     <Row>
                       <Col xs={3} sm={3} md={2} lg={2}>
-                        <IconChecked style={{ height: this.state.iconSize }} />
+                        <IconChecked />
                       </Col>
                       <Col xs={21} sm={21} md={22} lg={22}>
-                        <div style={{fontSize: this.state.fontSize, letterSpacing: this.state.letterSpacing}}>Venim in sprijinul dumneavoastra,va oferim informatii despre diverse combinatii de geam tripan si proprietatile acestora.</div>
+                        <div className='servicii_details'>Venim in sprijinul dumneavoastra,va oferim informatii despre diverse combinatii de geam tripan si proprietatile acestora.</div>
                       </Col>
                     </Row>
                   </Col>

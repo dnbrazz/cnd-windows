@@ -60,10 +60,31 @@ export const profilImg = {
   tiama: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Tamplarie%2FCulori%2Ftiama.png?alt=media&token=325b3303-1f75-441d-8da0-c6233859a19e'
 }
 
-export const homeServImg = {
-  tamplarieImg: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Fproiectare_ferestre_lg.png?alt=media&token=cc6a156e-9439-4547-81e3-7a3c4b98952b',
-  montajImg: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Ftransport_instalare_500x300_lg.jpg?alt=media&token=6025efe2-9148-4ac6-b131-773272465afa',
-  dealeriImg: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Foferte_dealeri_500x300_lg.jpg?alt=media&token=02b46889-c208-40f4-a883-ef7f202f9a8c'
+export const homeCarousel = {
+  img1: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/carousel%2Fheader-bg.jpg?alt=media&token=7588b7f8-e51e-4f5d-929d-5ca1a6651438',
+  img1Alt: 'Termopane PVC Tamplarie',
+  img1Title: 'Tamplarie PVC si Aluminiu',
+  img1Subtitle: 'Productie Usi si Ferestre cu geam termopan termoizolant',
+  img2: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/carousel%2Fcompartimentari.jpg?alt=media&token=bebfb09a-d67b-4b95-812b-f9d87a985320',
+  img2Alt: 'Compartimentari sticla securizata',
+  img2Title: 'Compartimentari Sticla',
+  img2Subtitle: 'Ideale in locuinte pentru delimitarea spatiului',
+  img3: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/carousel%2Fheader-termpoane.jpg?alt=media&token=4f206f8f-0e52-48f0-addd-a6cc22ea5285',
+  img3Alt: 'Termopane si Tamplarie PVC',
+  img3Title: 'Profile Salamander StreamLine',
+  img3Subtitle: 'Disponibile in 5 si 7 camere de izolare fonica si termica'
+}
+
+export const homeServicii = {
+  add1Img: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Fproiectare_ferestre_lg.png?alt=media&token=cc6a156e-9439-4547-81e3-7a3c4b98952b',
+  add1Alt: 'Termopane PVC Salamander Oferta',
+  add1Title: 'Tamplarie PVC & Aluminiu',
+  add2Img: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Ftransport_instalare_500x300_lg.jpg?alt=media&token=6025efe2-9148-4ac6-b131-773272465afa',
+  add2Alt: 'Transport si Montaj Termopane PVC Aluminiu',
+  add2Title: 'Transport si Montaj',
+  add3Img: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Acasa%2FMenus%2Foferte_dealeri_500x300_lg.jpg?alt=media&token=02b46889-c208-40f4-a883-ef7f202f9a8c',
+  add3Alt: 'Oferte pentru dealeri Tamplarie PVC Termopan',
+  add3Title: 'Oferte Dealeri'
 }
 
 export const accesorii = {

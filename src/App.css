@@ -37,15 +37,6 @@
   min-height: 50px;
 }
 
-.headroom {
-  top: 0;
-  left: 0;
-  right: 0;
-  zIndex: 1;
-  position: fixed;
-  max-width: 1200px;
-  margin: auto;
-}
 .ant-carousel .slick-slide {
   padding: 5px;
   max-height: inherit;
@@ -83,15 +74,7 @@
   color: #ff0000;
   cursor: pointer;
 }
-.campanie:hover, .descriere:hover {
-  cursor: pointer;
-}
-.descriere {
-  background-image: url("https://firebasestorage.googleapis.com/v0/b/jaked-brand.appspot.com/o/doublemenu%2F25-category.jpg?alt=media&token=5bcb1b73-8e63-401c-9c9e-fdf9a952b924");
-  background-size: cover;
-  border: 1px solid;
-  color: #333;
-}
+
 .campanie {
   background-size: cover;
   border: 1px solid;
@@ -106,18 +89,6 @@
 .image {
   width: 100%;
   height: 240px;
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #333;
-  overflow: hidden;
-  width: 100%;
-  height: 0;
-  transition: .5s ease;
 }
 
 .container:hover .overlay {
@@ -156,7 +127,7 @@
   background: linear-gradient(to right, #222 , #222);
 }
 
-.overlay {
+.tamplarie_colors {
   position: absolute; 
   bottom: 0; 
   background: rgb(0, 0, 0);
@@ -167,4 +138,165 @@
   font-size: 13px;
   text-align: center;
   opacity: 1;
+}
+
+.bara_meniu  {
+  border-bottom: 1px solid #000;
+  border-top: 2px solid #ffc81c;
+  background-color: #222;
+  padding: 0px;
+}
+
+.footer_style {
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+}
+
+.footer_icon_style {
+  font-size: 40px;
+  padding: 5px;
+}
+
+.toast * {
+  background-color: #222;
+  color: #ffc81c;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0px;
+}
+
+.contact_form {
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.dialog_text_style {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  
+}
+
+.dialog_item {
+  text-align: center;
+  cursor: pointer;
+}
+
+.dialog_item:hover * {
+  color: #ffc81c;
+  cursor: pointer;
+}
+
+#dialog_icon_style * {
+  font-size: 15px;
+  letter-spacing: 0px;
+  font-weight: normal;
+}
+
+.contact_form_textfield * {
+  font-size: 16px;
+}
+
+.menu_tab * {
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: none;
+  color: #fff;
+}
+
+.header_contact_row * {
+  font-size: 15px;
+  color: #fff;
+}
+.header_contact_row {
+  padding: 0px;
+}
+.header_contact_icon {
+  padding-top: 7px;
+}
+
+.header_paper * {
+  background-color: #222;
+}
+
+.acasa_card {
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.servicii_title {
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 20px;
+}
+
+.servicii_details {
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.tamplarie_colors {
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.tab_accesorii {
+  border-bottom: 1px solid #000;
+  background-color: #222;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .contact_form {
+    font-size: 12px;
+    letter-spacing: 0px;
+    font-weight: normal;
+  }
+  .dialog_icon_style * {
+    font-size: 20px;
+    letter-spacing: 0px;
+    font-weight: normal;
+  }
+  .dialog_text_style {
+    font-size: 12px;
+    font-weight: normal;
+  }
+  .contact_form_textfield * {
+    font-size: 12px;
+  }
+  .menu_tab * {
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
+  .header_contact_row * {
+    font-size: 12px;
+  }
+  .header_contact_icon {
+    padding-top: 10px;
+  }
+  .servicii_title {
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    padding: 15px;
+  }
+  .servicii_details {
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
+  .tamplarie_colors {
+    font-size: 12px;
+    letter-spacing: 0px;
+    font-weight: normal;
+  }
 }
