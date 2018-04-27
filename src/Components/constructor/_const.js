@@ -10,6 +10,9 @@ export const configFirebase = {
 export const artBackBlack = {
   backgroundColor: '#222'
 }
+export const artBackYellow = {
+  backgroundColor: '#ffc81c'
+}
 export const artTextWhite = {
   color: '#fff'
 }
@@ -92,6 +95,11 @@ export const accesorii = {
   plasarulouImg: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Fplase-insecte%2Ffda22f_a1f918abf5734c73aeb2d98b1021f8ba.png?alt=media&token=d1a3a72f-8398-41d0-8f04-d4a0073d171c',
   rulouImg: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Frulouri%2Frulou-pvc.png?alt=media&token=eccffe87-047d-40a5-97c8-4fb3fd6c5fc1',
   glafImg: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Frulouri%2Fglaf-interior-exterior.png?alt=media&token=9b09266d-adf2-463a-b3b2-9c085d57c459'
+}
+
+export const compartimentari = {
+  img: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Compartimentari%2Fcompartimentari.png?alt=media&token=bf614ba1-61e0-4ca3-b309-ee2f8bac7ebe',
+  alt: 'Compartimentari Sticla'
 }
 
 export const btn = {
