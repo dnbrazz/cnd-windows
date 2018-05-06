@@ -10,6 +10,9 @@ export const configFirebase = {
 export const artBackBlack = {
   backgroundColor: '#222'
 }
+export const artBackYellow = {
+  backgroundColor: '#ffc81c'
+}
 export const artTextWhite = {
   color: '#fff'
 }
@@ -99,10 +102,13 @@ export const compartimentari = {
   alt: 'Compartimentari Sticla'
 }
 
+<<<<<<< HEAD
 export const underConstruction = {
   img: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Portofoliu%2Fimg%2FUnder_Construction.png?alt=media&token=695e317c-9c60-4b81-b71a-79c640b50a0d',
   alt: 'In Constructie'
 }
+=======
+>>>>>>> b19bf9f27b3656d98d206f11bfc79a09f94a6567
 export const btn = {
   // Dialog Button Icons
   phonetext: 'Contacteaza Telefonic',

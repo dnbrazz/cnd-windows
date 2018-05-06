@@ -30,7 +30,7 @@ import Compartimentari from './Components/categorii/_compartimentari.js'
 import Cortine from './Components/categorii/_cortine.js'
 import Accesorii from './Components/categorii/_accesorii.js'
 // Const
-import { toast, btn, msgTitle, contact, artBackBlack } from './Components/constructor/_const.js'
+import { toast, btn, msgTitle, contact, artBackBlack, artBackYellow } from './Components/constructor/_const.js'
 
 // Firebase
 import firebase from 'firebase'
@@ -183,7 +183,7 @@ class App extends Component {
               <Cortine />
             </SwipeableViews>
           </Layout>
-          <FlatButton fullWidth onClick={() => this.handleOpen()} label={btn.contact} style={{ backgroundColor: yellowColor.color }} labelStyle={{color: '#222', textTransform: 'none', fontSize: this.state.fontSize, fontWeight: 'bold'}} />
+          <FlatButton fullWidth onClick={() => this.handleOpen()} label={btn.contact} style={artBackYellow} labelStyle={{color: '#222', textTransform: 'none', fontSize: 14, fontWeight: 'bold'}} />
           <Foot />
           <Dialog modal={false} open={this.state.open} onRequestClose={this.handleClose} >
             <Row gutter={8} type='flex' justify='space-around'>
@@ -224,7 +224,7 @@ class App extends Component {
                     this.setState({ ...this, mesaj: mesaj.target.value })
                   }} />
                   <br /><br />
-                  <FlatButton onClick={() => this.handleSubmit()} fullWidth label={btn.msg} style={{ backgroundColor: '#ffc81c' }} labelStyle={{ color: '#333', textTransform: 'none', fontSize: this.state.fontSize, fontWeight: 'bold' }} />
+                  <FlatButton onClick={() => this.handleSubmit()} fullWidth label={btn.msg} style={artBackYellow} labelStyle={{ color: '#333', textTransform: 'none', fontSize: 14, fontWeight: 'bold' }} />
                 </Row>
               </Col>
             </Row>

@@ -8,7 +8,7 @@ import CommunicationCall from 'material-ui/svg-icons/communication/call'
 import CommunicationEmail from 'material-ui/svg-icons/communication/email'
 import Camera from 'material-ui/svg-icons/image/photo-camera'
 import Home from 'material-ui/svg-icons/action/home'
-import { artBackBlack, menu, contact } from '../Components/constructor/_const'
+import { artBackBlack, menu, contact, artBackYellow } from '../Components/constructor/_const'
 
 class Head extends Component {
   render () {
@@ -41,14 +41,14 @@ class Head extends Component {
         </Row>
         <Row type='flex' style={artBackBlack}>
           <Col className='bara_meniu' xs={24} sm={24} md={6} lg={6} >
-            <Tabs onChange={this.props.handleChange} value={this.props.slideIndex} tabItemContainerStyle={{ backgroundColor: '#ffc81c' }} inkBarStyle={artBackBlack} contentContainerStyle={{ color: '#777' }}>
+            <Tabs onChange={this.props.handleChange} value={this.props.slideIndex} tabItemContainerStyle={artBackYellow} inkBarStyle={artBackBlack} contentContainerStyle={{ color: '#777' }}>
               <Tab value={0} icon={<Home />} />
               <Tab value={1} icon={<Camera />} />
               <Tab value={9} icon={<CommunicationCall />} />
             </Tabs>
           </Col>
           <Col className='bara_meniu' xs={24} sm={24} md={18} lg={18} >
-            <Tabs onChange={this.props.handleChange} value={this.props.slideIndex} tabItemContainerStyle={artBackBlack} inkBarStyle={{ backgroundColor: '#ffc81c' }}>
+            <Tabs onChange={this.props.handleChange} value={this.props.slideIndex} tabItemContainerStyle={artBackBlack} inkBarStyle={artBackYellow}>
               <Tab className='menu_tab' label={menu['1']} value={2} />
               <Tab className='menu_tab' label={menu['2']} value={3} />
               <Tab className='menu_tab' label={menu['3']} value={4} />
