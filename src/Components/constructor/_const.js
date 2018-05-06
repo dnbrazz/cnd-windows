@@ -94,6 +94,15 @@ export const accesorii = {
   glafImg: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Accesorii%2Frulouri%2Fglaf-interior-exterior.png?alt=media&token=9b09266d-adf2-463a-b3b2-9c085d57c459'
 }
 
+export const compartimentari = {
+  img: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Compartimentari%2Fcompartimentari.png?alt=media&token=bf614ba1-61e0-4ca3-b309-ee2f8bac7ebe',
+  alt: 'Compartimentari Sticla'
+}
+
+export const underConstruction = {
+  img: 'https://firebasestorage.googleapis.com/v0/b/cndwindows-ro.appspot.com/o/Portofoliu%2Fimg%2FUnder_Construction.png?alt=media&token=695e317c-9c60-4b81-b71a-79c640b50a0d',
+  alt: 'In Constructie'
+}
 export const btn = {
   // Dialog Button Icons
   phonetext: 'Contacteaza Telefonic',

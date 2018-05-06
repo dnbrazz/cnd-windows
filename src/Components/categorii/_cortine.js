@@ -9,6 +9,14 @@ import {
 import { Col, Row } from 'antd'
 import IconProfile from 'material-ui/svg-icons/editor/border-all'
 import IconArrowUp from 'material-ui/svg-icons/action/change-history'
+import { CardMedia } from 'material-ui/Card'
+import { underConstruction } from '../constructor/_const'
+
+const styleColor = {
+  padding: 20,
+  textAlign: 'center',
+  display: 'inline-block'
+}
 
 class Cortine extends Component {
   render () {
@@ -22,7 +30,11 @@ class Cortine extends Component {
           </StepLabel>
           <StepContent>
             <Row type='flex' justify='space-around' align='middle'>
-              <Col xs={24} sm={24} md={16} lg={16} style={{ paddingTop: 30 }} />
+              <Col xs={24} sm={24} md={16} lg={16} style={{ paddingTop: 30 }}>
+                <CardMedia style={styleColor}>
+                  <img src={underConstruction.img} alt={underConstruction.alt} />
+                </CardMedia>
+              </Col>
             </Row>
           </StepContent>
         </Step>

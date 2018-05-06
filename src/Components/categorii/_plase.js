@@ -9,7 +9,7 @@ import IconArrowUp from 'material-ui/svg-icons/action/change-history'
 import { accesorii } from '../constructor/_const'
 
 const styleColor = {
-  padding: 20,
+  padding: 22,
   textAlign: 'center',
   display: 'inline-block'
 }

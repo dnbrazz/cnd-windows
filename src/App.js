@@ -35,6 +35,9 @@ import { toast, btn, msgTitle, contact, artBackBlack } from './Components/constr
 // Firebase
 import firebase from 'firebase'
 
+// Analytics
+import ReactGA from 'react-ga'
+
 import './App.css'
 
 var yellowColor = {
@@ -71,6 +74,7 @@ class App extends Component {
   // Dialog Contact
   handleOpen = () => {
     this.setState({ open: true })
+    ReactGA.event({ category: 'Interactiune', action: 'A apasat butonul de Contact' })
   }
   handleClose = () => {
     this.setState({ open: false })
@@ -108,6 +112,7 @@ class App extends Component {
         toastmsg: toast.sent,
         toast: true
       })
+      ReactGA.event({ category: 'Interactiune', action: 'A lasat Mesaj' })
     } else {
       this.setState({
         toastmsg: toast.warning,
@@ -120,7 +125,26 @@ class App extends Component {
   handleChange = (value) => {
     if (value === 9) {
       this.setState({ open: true })
+      ReactGA.pageview('/Contact')
       return
+    }
+    if (value === 0) {
+      ReactGA.pageview('/')
+    }
+    if (value === 1) {
+      ReactGA.pageview('/Galerie')
+    }
+    if (value === 2) {
+      ReactGA.pageview('/Tamplarie')
+    }
+    if (value === 3) {
+      ReactGA.pageview('/Accesorii')
+    }
+    if (value === 4) {
+      ReactGA.pageview('/Compartimentari')
+    }
+    if (value === 5) {
+      ReactGA.pageview('/PeretiCortina')
     }
     this.setState({ slideIndex: value })
   }
@@ -129,12 +153,15 @@ class App extends Component {
   select = (key) => {
     switch (key) {
       case 0: {
+        ReactGA.event({ category: 'Interactiune', action: 'A apelat Telefonic' })
         return this.setState({ open: false })
       }
       case 1: {
+        ReactGA.event({ category: 'Interactiune', action: 'A apasat pe Email' })
         return this.setState({ open: false })
       }
       case 2: {
+        ReactGA.event({ category: 'Interactiune', action: 'A apasat pe Mesaj' })
         return this.setState({ open: false, msg: true })
       }
       default: {}

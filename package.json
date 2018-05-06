@@ -12,6 +12,7 @@
     "react-addons-css-transition-group": "^15.6.2",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
+    "react-ga": "^2.5.0",
     "react-google-maps": "^9.4.5",
     "react-headroom": "^2.2.2",
     "react-image-gallery": "^0.8.7",
@@ -37,7 +38,9 @@
   },
   "standard": {
     "parser": "babel-eslint",
-    "plugins": ["react"],
+    "plugins": [
+      "react"
+    ],
     "env": "browser"
-  }   
+  }
 }
